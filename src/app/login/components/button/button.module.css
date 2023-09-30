@@ -1,0 +1,33 @@
+.boxes {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: none;
+  border: solid var(--green);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+}
+.boxicon {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.boxicon svg {
+  width: 7vh;
+  height: auto;
+}
+.boxtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: solid var(--green);
+}
+.boxtext h3 {
+  color: var(--whitetowrite);
+  display: flex;
+  text-align: center;
+  font-size: clamp(0rem, 4vw, 1.25rem);
+}
