@@ -1,4 +1,5 @@
 import styles from "./navbar.module.css";
+import { Suspense } from "react";
 /* Icons */
 import { BiMap } from "react-icons/bi";
 import { ImStatsBars } from "react-icons/im";
@@ -55,11 +56,13 @@ export default function Navbar() {
             </button>
           </a>
         </div>
-        <a className={styles.menuDesktopAndPhone} href="/login">
-          <button>
-            <BsFillPersonFill size="3vh" />
-          </button>
-        </a>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <a className={styles.menuDesktopAndPhone} href="/przekierowanie">
+            <button>
+              <BsFillPersonFill size="3vh" />
+            </button>
+          </a>
+        </Suspense>
       </div>
     </div>
   );
