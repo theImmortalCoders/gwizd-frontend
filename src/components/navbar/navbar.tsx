@@ -2,7 +2,7 @@ import styles from "./navbar.module.css";
 /* Icons */
 import { BiMap } from "react-icons/bi";
 import { ImStatsBars } from "react-icons/im";
-import { BsMegaphone } from "react-icons/bs";
+import { BsFillPersonFill, BsMegaphone } from "react-icons/bs";
 import { BiPhone } from "react-icons/bi";
 
 /* Logo */
@@ -41,20 +41,25 @@ export default function Navbar() {
           </a>
           <a className={styles.menuPhone} href="/statistic">
             <button>
-              <ImStatsBars size="25.5px" />
+              <ImStatsBars size="1.5rem" />
             </button>
           </a>
           <a className={styles.menuPhone} href="/animals">
             <button>
-              <BsMegaphone size="25.5px" />
+              <BsMegaphone size="1.5rem" />
             </button>
           </a>
           <a className={styles.menuPhone} href="/contact">
             <button>
-              <BiPhone size="25.5px" />
+              <BiPhone size="1.5rem" />
             </button>
           </a>
         </div>
+        <a className={styles.menuDesktopAndPhone} href="/login">
+          <button>
+            <BsFillPersonFill size="1.5rem" />
+          </button>
+        </a>
       </div>
     </div>
   );

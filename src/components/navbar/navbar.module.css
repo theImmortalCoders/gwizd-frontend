@@ -52,6 +52,18 @@
   color: var(--almostwhite);
   border: none;
 }
+.menuDesktopAndPhone {
+  padding: 0.75rem;
+  border: 2px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  font-size: clamp(1.3rem, 1.5vw, 1.6rem);
+}
+.menuDesktopAndPhone button {
+  font-weight: 300;
+  background-color: var(--darkgrey);
+  color: var(--almostwhite);
+  border: none;
+}
 .navLink {
   text-decoration: none;
   color: inherit;
@@ -63,7 +75,7 @@
 }
 
 /* Mobile */
-@media (max-width: 770px) {
+@media (max-width: 850px) {
   .menuPhone {
     display: flex;
   }
