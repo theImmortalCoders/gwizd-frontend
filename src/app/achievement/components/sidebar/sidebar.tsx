@@ -8,18 +8,18 @@ const Sidebar: React.FC = () => {
     <nav className={styles.sidebar}>
       <ul className={styles.sidebarlist}>
         <li className={styles.sidebaritem}>
-          <Link to="/dashboard">
+          <Link to="/achievement">
             <div className={styles.iconTextContainer}>
               <AiOutlineHome className={styles.icon} />
-              <h4>Home</h4>
+              <h4>Osiągnięcia</h4>
             </div>
           </Link>
         </li>
         <li className={styles.sidebaritem}>
-          <Link to="/zoo">
+          <Link to="/history">
             <div className={styles.iconTextContainer}>
               <AiOutlineHome className={styles.icon} />
-              <h4>Page 1</h4>
+              <h4>Historia</h4>
             </div>
           </Link>
         </li>
@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
             className={styles.logout}
           >
             <AiOutlineLogout className={styles.icon} />
-            <h4>Logout</h4>
+            <h4>Wylogowanie</h4>
           </a>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 .sidebar {
   margin-top: 7vh;
   height: 100%;
-  width: 3.5vw;
+  width: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
 }
 
 .sidebar:hover {
-  width: 6.7vw;
+  width: 190px;
 }
 .sidebar .sidebaritem h4 {
   display: none;
@@ -34,7 +34,6 @@
   width: 100%;
   padding: 10px 16px;
   display: flex;
-  align-items: center;
   transition: background-color 0.3s;
 }
 .icon {
@@ -72,4 +71,18 @@
   display: flex;
   align-items: center;
   margin-bottom: auto;
+}
+@media (max-width: 770px) {
+  .sidebar {
+    display: flex;
+  }
+  .sidebar:hover {
+    display: none;
+  }
+  .sidebaritem {
+    padding: 5px 5px;
+  }
+  .sidebar {
+    width: 35px;
+  }
 }
