@@ -13,7 +13,7 @@
   min-height: 93vh;
 }
 .container {
-  padding-left: 15vw;
+  padding-left: 20vw;
   padding-top: 2vh;
   color: var(--almostwhite);
   font-size: clamp(0.8rem, 2vw, 2.5rem);

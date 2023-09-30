@@ -2,6 +2,7 @@
   margin-top: 0.5vh;
   margin-bottom: 0.5vh;
   height: auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 3fr;
   background: none;
@@ -25,15 +26,9 @@
   align-items: center;
   border-left: solid var(--green);
   flex-direction: column;
-}
-
-.boxtext h3 {
-  color: var(--whitetowrite);
-  display: flex;
-  text-align: center;
-  font-size: clamp(0rem, 4vw, 1.25rem);
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
 }
 .boxtext p {
   color: var(--whitetowrite);
-  font-size: clamp(0rem, 2vw, 1.25rem);
+  font-size: clamp(0.8rem, 1.5vw, 2.5rem);
 }

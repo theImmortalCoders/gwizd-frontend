@@ -17,3 +17,14 @@
   font-weight: 700;
   margin-bottom: 2vh;
 }
+/* Mobile */
+@media (max-width: 770px) {
+  .main {
+    width: 60vw;
+  }
+}
+@media (max-width: 365px) {
+  .main {
+    width: 70vw;
+  }
+}

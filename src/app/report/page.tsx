@@ -61,6 +61,7 @@ export default function report() {
       },
     });
     const data = await response;
+    window.location.href = "/";
   };
 
   return (
