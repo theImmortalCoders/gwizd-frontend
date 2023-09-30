@@ -3,22 +3,48 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 export default function report() {
-  const [animalList, setAnimalList] = useState([]);
-  const [formData, setFormData] = useState({
-    reportType: "SPOT",
-    location: {
-      longitude: 0,
-      latitude: 0,
-    },
-    animalId: 1,
-    quantity: 1,
-    title: "",
-    description: "",
-  });
-  const getLocation = () => {
-    const success = (position: any) => {
-      formData.location.latitude = position.coords.latitude;
-      formData.location.longitude = position.coords.longitude;
+    const [animalList,setAnimalList] = useState([])
+    const [formData,setFormData] = useState({
+        reportType: "SPOT",
+        location: {
+            longitude: 0,
+            latitude: 0
+        },
+        animalId: 1,
+        quantity: 1,
+        title: "",
+        description: "",
+    })
+    const getLocation = () =>{
+        const success = (position: any) => {
+            formData.location.latitude = position.coords.latitude
+            formData.location.longitude = position.coords.longitude
+        }
+        const error = () => {
+            console.log("Error")
+        }
+
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+    const getAnimals = async () => {
+        const response = await fetch("http://localhost:8080/api/animal")
+        const animals = await response.json();
+        setAnimalList(animals.map((animal: any) => {
+            return  [animal.name, animal.id];
+        }))
+    }
+    useEffect(() => {
+        getLocation()
+        getAnimals()
+    },[])
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
     };
     const error = () => {
       console.log("Error");
