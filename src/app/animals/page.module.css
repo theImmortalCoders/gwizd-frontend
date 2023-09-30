@@ -1,0 +1,9 @@
+.animalspagemain {
+  width: 100vw;
+  min-height: 93vh;
+  background-color: blue;
+}
+.animalspagemain h1 {
+  display: flex;
+  justify-content: center;
+}
