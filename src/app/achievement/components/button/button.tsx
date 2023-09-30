@@ -2,15 +2,15 @@ import styles from "./button.module.css";
 import React from "react";
 import { IconType } from "react-icons";
 
-interface LoginButtonProps {
+interface AchievementButtonProps {
   iconname: IconType;
   companyname: string;
 }
 
-export default function LoginButton({
+export default function AchievementButton({
   iconname,
   companyname,
-}: LoginButtonProps) {
+}: AchievementButtonProps) {
   return (
     <div className={styles.boxes}>
       <div className={styles.boxicon}>

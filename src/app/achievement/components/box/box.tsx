@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import LoginButton from "../button/button";
+import AchievementButton from "../button/button";
 import styles from "./box.module.css";
 import { AiFillGoogleCircle } from "react-icons/ai";
 
@@ -8,7 +8,7 @@ interface LoginBoxProps {
   loginText: string;
 }
 
-export default function LoginBox({ loginText }: LoginBoxProps) {
+export default function AchievementBox({ loginText }: LoginBoxProps) {
   const handleLoginClick = () => {
     document.cookie = "redirectUrl=http://localhost:3000/";
     window.location.href = "http://localhost:8080/api/oauth2/authorize/github";
@@ -23,7 +23,7 @@ export default function LoginBox({ loginText }: LoginBoxProps) {
         onClick={handleLoginClick}
         href="http://localhost:8080/api/oauth2/authorize/google"
       >
-        <LoginButton iconname={iconName1} companyname={companyName1} />
+        <AchievementButton iconname={iconName1} companyname={companyName1} />
       </a>
     </div>
   );
