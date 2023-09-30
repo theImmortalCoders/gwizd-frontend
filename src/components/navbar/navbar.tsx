@@ -1,18 +1,16 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import styles from "./navbar.module.css";
 /* Icons */
-import { BiLogIn } from "react-icons/bi";
-import { HiBars3BottomRight } from "react-icons/hi2";
-import { BsFillPersonFill } from "react-icons/bs";
+import { BiMap } from "react-icons/bi";
+import { ImStatsBars } from "react-icons/im";
+import { BsMegaphone } from "react-icons/bs";
+import { BiPhone } from "react-icons/bi";
+
+/* Logo */
 import logoWhite from "./components/logo_white.png"; // Import obrazka loga
 import Image from "next/image"; // Import komponentu Image z next/image
 
-const NavLink = lazy(() => import("./navlink"));
-
 export default function Navbar() {
-  const button1 = <BiLogIn size="1.5rem" />;
-  const button2 = <BsFillPersonFill size="1.5rem" />;
-
   return (
     <div className={styles.spaceBetween}>
       <div className={styles.navbarLeft}>
@@ -21,9 +19,9 @@ export default function Navbar() {
         </a>
       </div>
       <div className={styles.navbarRight}>
-        <div className={styles.spaceCenter}>
+        <div className={styles.spaceCenterDesktop}>
           <a className={styles.menuDesktop} href="/przekierowanie">
-            Twoja Okolica
+            Okolica
           </a>
           <a className={styles.menuDesktop} href="/przekierowanie">
             Statystyki
@@ -35,18 +33,29 @@ export default function Navbar() {
             Kontakt
           </a>
         </div>
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <a className={styles.menuDesktop} href="/przekierowanie">
+
+        <div className={styles.spaceCenterPhone}>
+          <a className={styles.menuPhone} href="/przekierowanie">
             <button>
-              <BsFillPersonFill size="1.5rem" />
+              <BiMap size="1.5rem" />
             </button>
           </a>
-        </Suspense>
-        <a className={styles.menuPhone}>
-          <button>
-            <HiBars3BottomRight size="25.5px" />
-          </button>
-        </a>
+          <a className={styles.menuPhone} href="/przekierowanie">
+            <button>
+              <ImStatsBars size="25.5px" />
+            </button>
+          </a>
+          <a className={styles.menuPhone} href="/przekierowanie">
+            <button>
+              <BsMegaphone size="25.5px" />
+            </button>
+          </a>
+          <a className={styles.menuPhone} href="/przekierowanie">
+            <button>
+              <BiPhone size="25.5px" />
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
