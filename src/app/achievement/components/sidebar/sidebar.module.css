@@ -9,10 +9,12 @@
   overflow-x: hidden;
   padding-top: 20px;
   transition: width 0.3s;
+  font-size: clamp(0.5rem, 1.5vw, 1.5rem);
 }
 
 .sidebar:hover {
-  width: 190px;
+  max-width: 250px;
+  width: 18vw;
 }
 .sidebar .sidebaritem h4 {
   display: none;
