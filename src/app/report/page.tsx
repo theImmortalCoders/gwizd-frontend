@@ -1,17 +1,40 @@
 'use client'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 export default function report(){
 
-    const [animals,setAnimals] = useState([])
+    const [animalList,setAnimalList] = useState([])
     const [formData,setFormData] = useState({
-        type: "",
-        animal: "",
-        photo: "",
+        reportType: "",
+        animalId: "",
+        quantity: 0,
         title: "",
         description: "",
-        latitude: 0,
-        longtitude: 0,
+        location: {
+            latitude: 0,
+            longtitude: 0,
+        },
     })
+    // const getLocation = () =>{
+    //     const success = (position: any) => {
+    //         console.log(position.coords.latitude)
+    //         formData.latitude
+    //     }
+    //     const error = () => {
+    //         console.log("Error")
+    //     }
+    //
+    //     navigator.geolocation.getCurrentPosition(success, error);
+    // }
+    const getAnimals = async () => {
+        const response = await fetch("http://localhost:8080/api/animal")
+        const animals = await response.json();
+        setAnimalList(animals.map((animal: any) => {
+            return  animal.name;
+        }))
+    }
+    useEffect(() => {
+        getAnimals()
+    },[])
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -24,7 +47,7 @@ export default function report(){
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:8080/api/contact",{
+        const response = await fetch("http://localhost:8080/api/report",{
             method: "POST",
             credentials: "include",
             body: JSON.stringify(formData),
@@ -34,12 +57,8 @@ export default function report(){
         })
         const data = await response
         console.log(data);
+        console.log("wykonało sie")
     };
-
-    // const handleGetAnimals = () => {
-    //     const response = fetch
-    //     )
-    // }
 
     return (
         <main>
@@ -48,14 +67,14 @@ export default function report(){
                     <label>Typ spotkania: </label>
                     <input
                         list={"type"}
-                        name="type"
-                        value={formData.type}
+                        name="reportType"
+                        value={formData.reportType}
                         onChange={handleChange}
                     />
                     <datalist id={"type"}>
-                        <option>Zwierze domowe</option>
-                        <option>Potencjalnie niebezpieczne</option>
-                        <option>dfl</option>
+                        <option value={"SPOT"}></option>
+                        <option value={"HOME"}></option>
+                        <option value={"DANGER"}></option>
                     </datalist>
                 </div>
                 <div>
@@ -63,22 +82,23 @@ export default function report(){
                     <input
                         list={"animals"}
                         name="animal"
-                        value={formData.animal}
+                        value={formData.animalId}
                         onChange={handleChange}
                     />
                     <datalist id={"animals"}>
-                        <option>Niedzwiedz</option>
-                        <option>Dzik</option>
-                        <option>Ptak</option>
-                        <option>Lis</option>
+                        {animalList.map((animalName) => {
+                            return(
+                                <option>{animalName}</option>
+                            )
+                        })}
                     </datalist>
                 </div>
                 <div>
-                    <label>Zdjęcie: </label>
+                    <label>Ilość: </label>
                     <input
-                        type="file"
-                        name="photo"
-                        value={formData.photo}
+                        type="number"
+                        name="quantity"
+                        value={formData.quantity}
                         onChange={handleChange}
                     />
                 </div>
