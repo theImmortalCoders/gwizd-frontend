@@ -5,7 +5,6 @@ import Report from "@/components/report/report";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Report />
     </main>
   );
 }
