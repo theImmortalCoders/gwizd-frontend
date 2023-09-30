@@ -34,14 +34,43 @@
   margin-top: 30px;
   height: auto;
   color: var(--whitetowrite);
-  font-size: clamp(0rem, 9vw, 3rem);
+  font-size: clamp(2rem, 3.5rem, 10rem);
   font-weight: 700;
   margin-bottom: 2vh;
 }
 .text {
-  font-size: clamp(0rem, 2vw, 3rem);
+  font-size: 1.2rem;
+}
+.input.text {
+  padding-left: 40px;
 }
 .selectform {
-  min-width: 200px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+}
+.selectformtextarea {
+  width: 100%;
+  height: 82px;
+  font-size: 1rem;
+}
+.submitbutton {
+  background-color: var(--darkgrey);
+  color: var(--whitetowrite);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  min-height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 300;
+}
+
+.submitbutton:hover {
+  background-color: var(--whitetowrite);
+  color: var(--darkgrey);
 }

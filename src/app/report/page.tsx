@@ -103,6 +103,7 @@ export default function report() {
             <div>
               <label>Ilość: </label>
               <input
+                className={styles.selectform}
                 min={1}
                 type="number"
                 name="quantity"
@@ -123,14 +124,16 @@ export default function report() {
             <div>
               <label>Opis: </label>
               <textarea
-                className={styles.selectform}
+                className={styles.selectformtextarea}
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
               ></textarea>
             </div>
             <div>
-              <button type={"submit"}>Wyślij</button>
+              <button className={styles.submitbutton} type={"submit"}>
+                Wyślij
+              </button>
             </div>
           </form>
         </div>
