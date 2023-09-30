@@ -7,7 +7,7 @@ export default function Achievement() {
     <div className={styles.achievementpagemain}>
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
-          <h1>Osiągnięcia</h1>
+          <h1>Osiągndsadęcia</h1>
           <AchievementBox loginText={loginText} />
         </div>
       </div>
