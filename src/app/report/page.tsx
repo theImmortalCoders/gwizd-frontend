@@ -4,15 +4,15 @@ export default function report(){
 
     const [animalList,setAnimalList] = useState([])
     const [formData,setFormData] = useState({
-        reportType: "",
-        animalId: "",
-        quantity: 0,
+        reportType: "SPOT",
+        location: {
+            longitude: 0,
+            latitude: 0
+        },
+        animalId: 1,
+        quantity: 1,
         title: "",
         description: "",
-        location: {
-            latitude: 0,
-            longtitude: 0,
-        },
     })
     // const getLocation = () =>{
     //     const success = (position: any) => {
@@ -29,7 +29,7 @@ export default function report(){
         const response = await fetch("http://localhost:8080/api/animal")
         const animals = await response.json();
         setAnimalList(animals.map((animal: any) => {
-            return  animal.name;
+            return  [animal.name, animal.id];
         }))
     }
     useEffect(() => {
@@ -47,6 +47,7 @@ export default function report(){
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        console.log(JSON.stringify(formData))
         const response = await fetch("http://localhost:8080/api/report",{
             method: "POST",
             credentials: "include",
@@ -56,8 +57,6 @@ export default function report(){
             }
         })
         const data = await response
-        console.log(data);
-        console.log("wykonało sie")
     };
 
     return (
@@ -65,37 +64,34 @@ export default function report(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Typ spotkania: </label>
-                    <input
-                        list={"type"}
+                    <select
                         name="reportType"
                         value={formData.reportType}
                         onChange={handleChange}
-                    />
-                    <datalist id={"type"}>
-                        <option value={"SPOT"}></option>
-                        <option value={"HOME"}></option>
-                        <option value={"DANGER"}></option>
-                    </datalist>
+                    >
+                        <option value={"SPOT"}>opcja 1</option>
+                        <option value={"HOME"}>opcja 2</option>
+                        <option value={"DANGER"}>opcja 3</option>
+                    </select>
                 </div>
                 <div>
                     <label>Zwierze: </label>
-                    <input
-                        list={"animals"}
-                        name="animal"
+                    <select
+                        name="animalId"
                         value={formData.animalId}
                         onChange={handleChange}
-                    />
-                    <datalist id={"animals"}>
-                        {animalList.map((animalName) => {
+                    >
+                        {animalList.map((animal) => {
                             return(
-                                <option>{animalName}</option>
+                                <option key={animal[1]} value={animal[1]}>{animal[0]}</option>
                             )
                         })}
-                    </datalist>
+                    </select>
                 </div>
                 <div>
                     <label>Ilość: </label>
                     <input
+                        min={1}
                         type="number"
                         name="quantity"
                         value={formData.quantity}
