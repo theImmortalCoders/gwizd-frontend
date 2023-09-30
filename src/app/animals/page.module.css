@@ -1,9 +1,26 @@
 .animalspagemain {
   width: 100vw;
   min-height: 93vh;
-  background-color: blue;
 }
-.animalspagemain h1 {
-  display: flex;
-  justify-content: center;
+/*https://pixabay.com/pl/photos/lis-red-fox-przebieg%C5%82y-7017260/*/
+.backgroundImage {
+  background-image: url("./animals.jpg");
+  background-size: cover;
+  background-position: center top 70%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: auto;
+  height: 93vh;
+}
+.container {
+  padding-left: 25vw;
+  padding-top: 8vh;
+  color: var(--almostwhite);
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
+  text-shadow: 1px 1px 2px var(--verydarkgrey);
+}
+.container p {
+  padding-right: 20vw;
+  padding-bottom: 3vh;
+  font-weight: 600;
 }
