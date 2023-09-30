@@ -5,7 +5,9 @@ export default function Homepage() {
     <div className={styles.reportpagemain}>
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
-          <button>Zgłoś znalezione zwierzę</button>
+          <a href="/report">
+            <button>Zgłoś znalezione zwierzę</button>
+          </a>
         </div>
         <div className={styles.containertext}>
           <h2>
