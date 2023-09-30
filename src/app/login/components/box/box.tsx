@@ -21,7 +21,7 @@ export default function LoginBox({ loginText }: LoginBoxProps) {
       <div className={styles.text}>{loginText}</div>
       <a
         onClick={handleLoginClick}
-        href="https://api.gwizd.online/api/oauth2/authorize/google"
+        href="http://localhost:8080/api/oauth2/authorize/google"
       >
         <LoginButton iconname={iconName1} companyname={companyName1} />
       </a>
