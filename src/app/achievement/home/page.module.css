@@ -4,7 +4,7 @@
 }
 /*https://pixabay.com/pl/photos/b%C3%B3br-szczur-nutrii-m%C5%82ode-gryzo%C5%84-7738914/*/
 .backgroundImage {
-  background-image: url("../achievement.jpg");
+  background-image: url("./achievement.jpg");
   background-size: cover;
   background-position: center top 30%;
   padding-top: 5vh;

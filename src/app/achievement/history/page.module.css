@@ -1,5 +1,24 @@
-.xd {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.historypagemain {
+  width: 100vw;
+  min-height: 93vh;
+}
+/*https://pixabay.com/pl/photos/sarna-jele%C5%84-poro%C5%BCe-le%C5%9Bne-zwierz%C4%99-2634729/*/
+.backgroundImage {
+  background-image: url("./history.jpg");
+  background-size: cover;
+  background-position: center top 30%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: auto;
+  min-height: 93vh;
+}
+.container {
+  padding-left: 15vw;
+  padding-top: 2vh;
+  color: var(--almostwhite);
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
+  text-shadow: 1px 1px 2px var(--verydarkgrey);
+}
+.container h1 {
+  padding-bottom: 4vh;
 }
