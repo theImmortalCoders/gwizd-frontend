@@ -1,53 +1,60 @@
-import { Suspense, lazy } from "react";
 import styles from "./navbar.module.css";
 /* Icons */
-import { BiLogIn } from "react-icons/bi";
-import { HiBars3BottomRight } from "react-icons/hi2";
-import { BsFillPersonFill } from "react-icons/bs";
+import { BiMap } from "react-icons/bi";
+import { ImStatsBars } from "react-icons/im";
+import { BsMegaphone } from "react-icons/bs";
+import { BiPhone } from "react-icons/bi";
 
-const NavLink = lazy(() => import("./navlink"));
+/* Logo */
+import logoWhite from "./components/logo_white.png";
+import Image from "next/image";
 
 export default function Navbar() {
-  const button1 = <BiLogIn size="1.5rem" />;
-  const button2 = <BsFillPersonFill size="1.5rem" />;
-
   return (
     <div className={styles.spaceBetween}>
       <div className={styles.navbarLeft}>
-        <a className={styles.menuDesktop} href="/">
-          <h2>LOGO</h2>
+        <a href="/">
+          <Image src={logoWhite} alt="Logo" className={styles.logo} />
         </a>
       </div>
       <div className={styles.navbarRight}>
-        <div className={styles.spaceCenter}>
-          <div className={styles.menuDesktop}>
-            <NavLink href="/#report">Zgłoś</NavLink>
-          </div>
-          <div className={styles.menuDesktop}>
-            <NavLink href="/#howItWorks">Jak to działa</NavLink>
-          </div>
-          <div className={styles.menuDesktop}>
-            <NavLink href="/#oNas">O nas</NavLink>
-          </div>
-          <div className={styles.menuDesktop}>
-            <NavLink href="/#cities">Miasta</NavLink>
-          </div>
-          <div className={styles.menuDesktop}>
-            <NavLink href="/#contact">Kontakt</NavLink>
-          </div>
+        <div className={styles.spaceCenterDesktop}>
+          <a className={styles.menuDesktop} href="/maps">
+            Okolica
+          </a>
+          <a className={styles.menuDesktop} href="/statistic">
+            Statystyki
+          </a>
+          <a className={styles.menuDesktop} href="/animals">
+            Zwierzęta w Mieście
+          </a>
+          <a className={styles.menuDesktop} href="/contact">
+            Kontakt
+          </a>
         </div>
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <a className={styles.menuDesktop} href="/przekierowanie">
+
+        <div className={styles.spaceCenterPhone}>
+          <a className={styles.menuPhone} href="/maps">
             <button>
-              <BsFillPersonFill size="1.5rem" />
+              <BiMap size="1.5rem" />
             </button>
           </a>
-        </Suspense>
-        <a className={styles.menuPhone}>
-          <button>
-            <HiBars3BottomRight size="25.5px" />
-          </button>
-        </a>
+          <a className={styles.menuPhone} href="/statistic">
+            <button>
+              <ImStatsBars size="25.5px" />
+            </button>
+          </a>
+          <a className={styles.menuPhone} href="/animals">
+            <button>
+              <BsMegaphone size="25.5px" />
+            </button>
+          </a>
+          <a className={styles.menuPhone} href="/contact">
+            <button>
+              <BiPhone size="25.5px" />
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );

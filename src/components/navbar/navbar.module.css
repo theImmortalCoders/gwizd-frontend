@@ -13,15 +13,25 @@
   display: flex;
   align-items: center;
 }
+.logo {
+  width: auto;
+  height: 5vh;
+}
 .navbarRight {
   display: flex;
   align-items: flex-start;
   padding-right: 4vh;
 }
-.spaceCenter {
+.spaceCenterDesktop {
   flex-wrap: "wrap";
   justify-content: center;
   display: flex;
+  max-width: 100%;
+}
+.spaceCenterPhone {
+  flex-wrap: "wrap";
+  justify-content: center;
+  display: none;
   max-width: 100%;
 }
 .menuDesktop {
@@ -29,17 +39,6 @@
   border: 2px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
   font-size: clamp(1.3rem, 1.5vw, 1.6rem);
-}
-.menuDesktop h2 {
-  font-weight: 300;
-  font-size: clamp(1.3rem, 1.5vw, 1.6rem);
-}
-.menuDesktop button {
-  font-weight: 300;
-  background-color: var(--darkgrey);
-  color: var(--almostwhite);
-  border: none;
-  cursor: pointer;
 }
 .menuPhone {
   padding: 0.75rem;
@@ -56,28 +55,23 @@
 .navLink {
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  transition: all 0.3s ease;
 }
 
-/* Style the hover effect */
 .navLink:hover {
-  color: var(--green); /* Change the color on hover */
-}
-
-/* Scroll to anchor links smoothly */
-@media (hover: hover) and (pointer: fine) {
-}
-
-@media (prefers-reduced-motion) {
+  color: var(--green);
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+@media (max-width: 770px) {
   .menuPhone {
     display: flex;
   }
-  .spaceCenter {
+  .spaceCenterDesktop {
     display: none;
+  }
+  .spaceCenterPhone {
+    display: flex;
   }
   div.navbarLeft {
     padding-left: 0vw;
@@ -85,14 +79,4 @@
   div.navbarRight {
     padding-right: 0vh;
   }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-}
-
-@media (prefers-color-scheme: dark) {
-}
-
-@keyframes rotate {
 }

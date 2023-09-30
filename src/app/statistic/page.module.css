@@ -1,0 +1,9 @@
+.statisticpagemain {
+  width: 100vw;
+  min-height: 93vh;
+  background-color: blue;
+}
+.statisticpagemain h1 {
+  display: flex;
+  justify-content: center;
+}
