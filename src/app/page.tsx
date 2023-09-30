@@ -1,10 +1,10 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import Report from "@/components/report/report";
+import Homepage from "@/components/homepage/homepage";
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Homepage />
     </main>
   );
 }
