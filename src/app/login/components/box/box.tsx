@@ -11,8 +11,7 @@ interface LoginBoxProps {
 export default function LoginBox({ loginText }: LoginBoxProps) {
   const handleLoginClick = () => {
     document.cookie = "redirectUrl=http://localhost:3000/";
-    window.location.href =
-      "https://api.gwizd.online/api/oauth2/authorize/google";
+    window.location.href = "http://localhost:8080/api/oauth2/authorize/google";
   };
 
   const iconName1 = AiFillGoogleCircle;
