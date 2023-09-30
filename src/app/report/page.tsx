@@ -27,7 +27,7 @@ export default function report() {
     navigator.geolocation.getCurrentPosition(success, error);
   };
   const getAnimals = async () => {
-    const response = await fetch("http://localhost:8080/api/animal");
+    const response = await fetch("https://api.gwizd.online/api/animal");
     const animals = await response.json();
     setAnimalList(
       animals.map((animal: any) => {
