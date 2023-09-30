@@ -75,14 +75,15 @@
 @media (max-width: 770px) {
   .sidebar {
     display: flex;
+    width: 35px;
   }
   .sidebar:hover {
-    display: none;
+    width: 35px;
   }
   .sidebaritem {
     padding: 5px 5px;
   }
-  .sidebar {
-    width: 35px;
+  .sidebar:hover .sidebaritem h4 {
+    display: none;
   }
 }
