@@ -15,17 +15,17 @@ export default function report() {
     title: "",
     description: "",
   });
-  // const getLocation = () =>{
-  //     const success = (position: any) => {
-  //         console.log(position.coords.latitude)
-  //         formData.latitude
-  //     }
-  //     const error = () => {
-  //         console.log("Error")
-  //     }
-  //
-  //     navigator.geolocation.getCurrentPosition(success, error);
-  // }
+  const getLocation = () => {
+    const success = (position: any) => {
+      formData.location.latitude = position.coords.latitude;
+      formData.location.longitude = position.coords.longitude;
+    };
+    const error = () => {
+      console.log("Error");
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error);
+  };
   const getAnimals = async () => {
     const response = await fetch("http://localhost:8080/api/animal");
     const animals = await response.json();
@@ -36,6 +36,7 @@ export default function report() {
     );
   };
   useEffect(() => {
+    getLocation();
     getAnimals();
   }, []);
   const handleChange = (
