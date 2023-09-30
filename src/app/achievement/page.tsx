@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./home/page";
-import Zoo from "./zoo/page";
+import History from "./history/page";
 import Sidebar from "./components/sidebar/sidebar";
 
 function SidebarRouting() {
@@ -11,8 +11,8 @@ function SidebarRouting() {
       <div className="App">
         <Sidebar />
         <Routes>
-          <Route path="/dashboard" element={<Home />} />
-          <Route path="/zoo" element={<Zoo />} />
+          <Route path="/achievement" element={<Home />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
     </Router>
