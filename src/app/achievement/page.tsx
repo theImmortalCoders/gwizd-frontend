@@ -1,16 +1,22 @@
-import AchievementBox from "./components/box/box";
-import styles from "./page.module.css";
+"use client";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./home/page";
+import Zoo from "./zoo/page";
+import Sidebar from "./components/sidebar/sidebar";
 
-export default function Achievement() {
-  const loginText: string = "Logowanie";
+function SidebarRouting() {
   return (
-    <div className={styles.achievementpagemain}>
-      <div className={styles.backgroundImage}>
-        <div className={styles.container}>
-          <h1>Osiągndsadęcia</h1>
-          <AchievementBox loginText={loginText} />
-        </div>
+    <Router>
+      <div className="App">
+        <Sidebar />
+        <Routes>
+          <Route path="/dashboard" element={<Home />} />
+          <Route path="/zoo" element={<Zoo />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
+
+export default SidebarRouting;
