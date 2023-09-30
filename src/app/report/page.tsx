@@ -8,7 +8,9 @@ export default function report(){
         animal: "",
         photo: "",
         title: "",
-        description: ""
+        description: "",
+        latitude: 0,
+        longtitude: 0,
     })
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

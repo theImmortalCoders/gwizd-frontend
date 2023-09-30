@@ -9,7 +9,6 @@ export default function testFunction() {
 
 
 
-
     return (
         <button onClick={getAnimals}>button</button>
     );
