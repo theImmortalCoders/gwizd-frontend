@@ -36,28 +36,28 @@ export default function Navbar() {
         <div className={styles.spaceCenterPhone}>
           <a className={styles.menuPhone} href="/maps">
             <button>
-              <BiMap size="1.5rem" />
+              <BiMap size="3vh" />
             </button>
           </a>
           <a className={styles.menuPhone} href="/statistic">
             <button>
-              <ImStatsBars size="1.5rem" />
+              <ImStatsBars size="3vh" />
             </button>
           </a>
           <a className={styles.menuPhone} href="/animals">
             <button>
-              <BsMegaphone size="1.5rem" />
+              <BsMegaphone size="3vh" />
             </button>
           </a>
           <a className={styles.menuPhone} href="/contact">
             <button>
-              <BiPhone size="1.5rem" />
+              <BiPhone size="3vh" />
             </button>
           </a>
         </div>
         <a className={styles.menuDesktopAndPhone} href="/login">
           <button>
-            <BsFillPersonFill size="1.5rem" />
+            <BsFillPersonFill size="3vh" />
           </button>
         </a>
       </div>

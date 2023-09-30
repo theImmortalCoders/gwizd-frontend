@@ -35,30 +35,31 @@
   max-width: 100%;
 }
 .menuDesktop {
-  padding: 0.75rem;
+  padding: 1vh;
   border: 2px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
-  font-size: clamp(1.3rem, 1.5vw, 1.6rem);
+  font-size: clamp(2.5vh, 2vh, 2.5vh);
 }
 .menuPhone {
-  padding: 0.75rem;
+  padding: 1vh;
   border-radius: var(--darkgrey);
   transition: background 200ms, border 200ms;
   display: none;
 }
 .menuPhone button {
+  padding-top: 0.1vh;
   font-weight: 300;
   background-color: var(--darkgrey);
   color: var(--almostwhite);
   border: none;
 }
 .menuDesktopAndPhone {
-  padding: 0.75rem;
-  border: 2px solid rgba(var(--card-border-rgb), 0);
+  padding: 1vh;
+  border-radius: var(--darkgrey);
   transition: background 200ms, border 200ms;
-  font-size: clamp(1.3rem, 1.5vw, 1.6rem);
 }
 .menuDesktopAndPhone button {
+  padding-top: 0.1vh;
   font-weight: 300;
   background-color: var(--darkgrey);
   color: var(--almostwhite);
@@ -75,7 +76,7 @@
 }
 
 /* Mobile */
-@media (max-width: 850px) {
+@media (max-width: 770px) {
   .menuPhone {
     display: flex;
   }
