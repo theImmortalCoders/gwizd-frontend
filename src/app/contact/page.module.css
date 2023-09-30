@@ -1,0 +1,9 @@
+.contactpagemain {
+  width: 100vw;
+  min-height: 93vh;
+  background-color: blue;
+}
+.contactpagemain h1 {
+  display: flex;
+  justify-content: center;
+}
