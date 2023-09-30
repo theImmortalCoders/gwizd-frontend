@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  min-height: 93vh;
+}
+/*https://pixabay.com/pl/photos/lis-red-fox-przebieg%C5%82y-7017260/*/
+.backgroundImage {
+  background-image: url("./animals.jpg");
+  background-size: cover;
+  background-position: center top 70%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: 100%;
+  height: 93vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  background: transparent;
+  border: 2px solid var(--blur);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  padding: 0px 40px 30px 40px;
+  width: 80%;
+  max-width: 70vh;
+  min-height: 50vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 30px;
+  height: auto;
+  color: var(--whitetowrite);
+  font-size: clamp(2rem, 3.5rem, 10rem);
+  font-weight: 700;
+  margin-bottom: 2vh;
+}
+.text {
+  font-size: 1.2rem;
+}
+.input.text {
+  padding-left: 40px;
+}
+.selectform {
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+}
+.selectformtextarea {
+  width: 100%;
+  height: 82px;
+  font-size: 1rem;
+}
+.submitbutton {
+  background-color: var(--darkgrey);
+  color: var(--whitetowrite);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  min-height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 300;
+}
+
+.submitbutton:hover {
+  background-color: var(--whitetowrite);
+  color: var(--darkgrey);
+}
