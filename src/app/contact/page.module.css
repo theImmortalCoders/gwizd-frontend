@@ -37,3 +37,8 @@
 .h1 {
   text-align: center;
 }
+@media (max-width: 520px) {
+  .contactpagemain h1 {
+    padding-left: 20vw;
+  }
+}
