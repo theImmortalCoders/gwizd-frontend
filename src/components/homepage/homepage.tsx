@@ -1,6 +1,6 @@
-import styles from "./report.module.css";
+import styles from "./homepage.module.css";
 
-export default function Report() {
+export default function Homepage() {
   return (
     <div className={styles.reportpagemain}>
       <div className={styles.backgroundImage}>
