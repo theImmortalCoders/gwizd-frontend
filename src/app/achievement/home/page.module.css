@@ -1,7 +1,6 @@
 .achievementpagemain {
   width: 100vw;
   min-height: 93vh;
-  background-color: blue;
 }
 /*https://pixabay.com/pl/photos/b%C3%B3br-szczur-nutrii-m%C5%82ode-gryzo%C5%84-7738914/*/
 .backgroundImage {
@@ -14,17 +13,12 @@
   min-height: 93vh;
 }
 .container {
-  padding-left: 25vw;
-  padding-top: 8vh;
+  padding-left: 15vw;
+  padding-top: 2vh;
   color: var(--almostwhite);
   font-size: clamp(0.8rem, 2vw, 2.5rem);
   text-shadow: 1px 1px 2px var(--verydarkgrey);
 }
-
-.xd {
-  padding-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
+.container h1 {
+  padding-bottom: 4vh;
 }

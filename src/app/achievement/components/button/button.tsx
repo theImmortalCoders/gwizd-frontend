@@ -4,12 +4,14 @@ import { IconType } from "react-icons";
 
 interface AchievementButtonProps {
   iconname: IconType;
-  companyname: string;
+  trophyname: string;
+  trophydescription: string;
 }
 
 export default function AchievementButton({
   iconname,
-  companyname,
+  trophyname,
+  trophydescription,
 }: AchievementButtonProps) {
   return (
     <div className={styles.boxes}>
@@ -21,7 +23,8 @@ export default function AchievementButton({
         </a>
       </div>
       <div className={styles.boxtext}>
-        <h3>Zaloguj się za pomocą {companyname}</h3>
+        <h3>{trophyname}</h3>
+        <p>{trophydescription}</p>
       </div>
     </div>
   );

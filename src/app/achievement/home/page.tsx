@@ -27,20 +27,8 @@ export default function Home() {
     <div className={styles.achievementpagemain}>
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
-          <h1>Osiągndsadęcia</h1>
-          <AchievementBox loginText="dasdsa" />
-        </div>
-        <div className={styles.xd}>
-          <button formMethod="get" onClick={handleGetUserInfo}>
-            Pobierz info
-          </button>
-          {userInfo && (
-            <div>
-              <h2>Informacje o użytkowniku:</h2>
-              <p>Imię: {userInfo.username}</p>
-              <p>email: {userInfo.email}</p>
-            </div>
-          )}
+          <h1>Osiągnięcia</h1>
+          <AchievementBox />
         </div>
       </div>
     </div>

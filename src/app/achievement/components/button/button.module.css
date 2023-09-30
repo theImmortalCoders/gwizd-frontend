@@ -8,7 +8,6 @@
   border: solid var(--green);
   border-radius: 20px;
   backdrop-filter: blur(20px);
-  cursor: pointer;
 }
 .boxicon {
   display: flex;
@@ -16,6 +15,7 @@
   margin: auto;
 }
 .boxicon svg {
+  padding: 10px;
   width: 7vh;
   height: auto;
 }
@@ -24,10 +24,16 @@
   justify-content: center;
   align-items: center;
   border-left: solid var(--green);
+  flex-direction: column;
 }
+
 .boxtext h3 {
   color: var(--whitetowrite);
   display: flex;
   text-align: center;
   font-size: clamp(0rem, 4vw, 1.25rem);
+}
+.boxtext p {
+  color: var(--whitetowrite);
+  font-size: clamp(0rem, 2vw, 1.25rem);
 }
