@@ -1,5 +1,5 @@
 'use client'
-export default function testFunction() {
+export default function getAnimals() {
 
     const getAnimals = async () => {
         const response = await fetch("http://localhost:8080/api/animal")
