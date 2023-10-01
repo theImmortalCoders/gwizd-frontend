@@ -46,6 +46,9 @@
   background-color: var(--darkgrey);
   color: var(--whitetowrite);
 }
+.label {
+  color: var(--whitetowrite);
+}
 .selectformtextarea {
   width: 100%;
   height: 82px;

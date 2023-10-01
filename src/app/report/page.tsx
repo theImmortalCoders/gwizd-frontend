@@ -68,7 +68,7 @@ export default function report() {
     <main className={styles.main}>
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
-          <div className={styles.header}>Formulasz zgłoszeniowy</div>
+          <div className={styles.header}>Formularz zgłoszeniowy</div>
           <form onSubmit={handleSubmit} className={styles.text}>
             <div>
               <label>Typ spotkania: </label>
