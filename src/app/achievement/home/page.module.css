@@ -22,3 +22,33 @@
 .container h1 {
   padding-bottom: 4vh;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 40vw;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 30px;
+  height: auto;
+  color: var(--whitetowrite);
+  font-size: clamp(0rem, 9vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 2vh;
+}
+/* Mobile */
+@media (max-width: 770px) {
+  .main {
+    width: 60vw;
+  }
+}
+@media (max-width: 365px) {
+  .main {
+    width: 70vw;
+  }
+}

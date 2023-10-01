@@ -13,8 +13,7 @@
 }
 
 .sidebar:hover {
-  max-width: 250px;
-  width: 8.8vw;
+  width: 250px;
 }
 .sidebar .sidebaritem h4 {
   display: none;
