@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
-import AchievementButton from "../button/button";
 import styles from "./box.module.css";
 import { BsTrophy } from "react-icons/bs";
+import AchievementButton from "../button/button";
+import AchievementButtonGlow from "../buttonglow/buttonglow";
 
 export default function AchievementBox() {
   const iconName1 = BsTrophy;
@@ -20,7 +21,7 @@ export default function AchievementBox() {
 
   return (
     <div className={styles.main}>
-      <AchievementButton
+      <AchievementButtonGlow
         iconname={iconName1}
         trophyname={trophyName1}
         trophydescription={trophyDescription1}

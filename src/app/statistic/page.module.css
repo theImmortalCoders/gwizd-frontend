@@ -1,9 +1,30 @@
 .statisticpagemain {
   width: 100vw;
   min-height: 93vh;
-  background-color: blue;
 }
-.statisticpagemain h1 {
+/*https://pixabay.com/pl/photos/b%C3%B3br-szczur-nutrii-m%C5%82ode-gryzo%C5%84-7738914/*/
+.backgroundImage {
+  background-image: url("./achievement.jpg");
+  background-size: cover;
+  background-position: center top 30%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: auto;
+  min-height: 93vh;
+}
+.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  background: transparent;
+  border: 2px solid var(--blur);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  padding: 0px 40px 30px 40px;
+  max-width: 50vh;
+  height: auto;
+}
+.animalList p {
+  color: var(--almostwhite);
 }
