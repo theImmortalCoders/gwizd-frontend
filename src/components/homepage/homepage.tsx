@@ -6,14 +6,8 @@ export default function Homepage() {
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
           <a href="/report">
-            <button>Zgłoś znalezione zwierzę</button>
+            <button>Widzę zwierzę!</button>
           </a>
-        </div>
-        <div className={styles.containertext}>
-          <h2>
-            Kliknij przycisk na górze jeżeli znalazłeś zaginionę lub dzikie
-            zwierzę
-          </h2>
         </div>
       </div>
     </div>

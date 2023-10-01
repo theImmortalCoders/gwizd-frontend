@@ -34,19 +34,3 @@
   background-color: var(--whitetowrite);
   color: var(--verydarkgrey);
 }
-.containertext {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 7vh;
-}
-.containertext h2 {
-  padding: 2vh 5vh;
-  background-color: var(--blur);
-  color: var(--verydarkgrey);
-  border: none;
-  border-radius: 40px;
-  text-align: center;
-  font-size: clamp(0.8rem, 1.2vw, 2rem);
-  text-decoration: none;
-}
