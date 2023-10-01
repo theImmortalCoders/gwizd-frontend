@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
   Typography,
   TextField,
@@ -11,14 +11,12 @@ import {
 } from "@mui/material";
 import styles from "./page.module.css";
 
-
-
 export default function Statistic() {
-  const [statData,setStatData] = useState({
+  const [statData, setStatData] = useState({
     spotType: "",
     myId: 0,
   });
-  const [dane,setDane] = useState([]);
+  const [dane, setDane] = useState([]);
   const animalData = [
     { name: "Kot", population: 10000, threatLevel: "Niskie" },
     { name: "Pies", population: 8000, threatLevel: "Niskie" },
@@ -28,18 +26,20 @@ export default function Statistic() {
   ];
 
   const getByReportType = async () => {
-    const response = await fetch(`http://localhost:8080/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`);
-    const wyniki = await response.json()
+    const response = await fetch(
+      `http://localhost:8080/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
+    );
+    const wyniki = await response.json();
     setDane(
-        wyniki.map((wynik: any)=>{
-          return wynik
-        })
-    )
-    console.log(wyniki)
-  }
-  useEffect(()=>{
-    getByReportType()
-  },[])
+      wyniki.map((wynik: any) => {
+        return wynik;
+      })
+    );
+    console.log(wyniki);
+  };
+  useEffect(() => {
+    getByReportType();
+  }, []);
   const [searchTerm, setSearchTerm] = useState("");
   const [animalList, setAnimalList] = useState([]);
   const [filterPopulation, setFilterPopulation] = useState("");
@@ -49,9 +49,9 @@ export default function Statistic() {
     const response = await fetch("https://api.gwizd.online/api/animal");
     const animals = await response.json();
     setAnimalList(
-        animals.map((animal: any) => {
-          return [animal.name, animal.id];
-        })
+      animals.map((animal: any) => {
+        return [animal.name, animal.id];
+      })
     );
   };
 
@@ -60,7 +60,7 @@ export default function Statistic() {
   }, []);
 
   const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setStatData({
@@ -68,7 +68,6 @@ export default function Statistic() {
       [name]: value,
     });
   };
-
 
   const filteredData = animalData.filter((animal) => {
     return (
@@ -85,54 +84,64 @@ export default function Statistic() {
         <div className={styles.container}>
           <Typography variant="h3">Statystyki</Typography>
 
-          <div className={styles.filters}>
+          <div>
+            {/*
             <TextField
+              className={styles.filters}
               label="Szukaj"
               variant="outlined"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+            */}
 
-            <FormControl variant="outlined">
+            <FormControl variant="outlined" className={styles.filters}>
               <InputLabel>Liczba populacji</InputLabel>
               <Select
-                value={statData.spotType}
+                className={styles.selectform}
+                value={statData.myId}
+                name="myId"
                 onChange={handleChange}
                 label="Liczba populacji"
+              >
+                {animalList.map((animal) => {
+                  return (
+                    <MenuItem key={animal[1]} value={animal[1]}>
+                      {animal[0]}
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+            </FormControl>
+            {/*
+            <FormControl variant="outlined" className={styles.filters}>
+              <InputLabel>Stopień zagrożenia</InputLabel>
+              <Select
+                className={styles.selectform}
+                value={statData.spotType}
+                onChange={handleChange}
+                label="Stopień zagrożenia"
               >
                 <MenuItem value="SPOT">spot</MenuItem>
                 <MenuItem value="HOME">homee</MenuItem>
                 <MenuItem value="DANGER">dendżer</MenuItem>
               </Select>
             </FormControl>
-
-            <FormControl variant="outlined">
-              <InputLabel>Stopień zagrożenia</InputLabel>
-              <Select
-                value={statData.myId}
-                name="myId"
-                onChange={handleChange}
-                label="Stopień zagrożenia"
-              >
-                {animalList.map((animal) => {
-                  return (
-                      <MenuItem key={animal[1]} value={animal[1]}>
-                        {animal[0]}
-                      </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
+          */}
           </div>
 
           <ul className={styles.animalList}>
             {dane.map((obiekt: any) => {
-              return(
-                  <li>{obiekt.animal.name}</li>
-              )
+              return <li>{obiekt.animal.name}</li>;
             })}
           </ul>
-          <button name={"filtruj"} onClick={getByReportType}>filtruj</button>
+          <button
+            className={styles.buttonf}
+            name={"filtruj"}
+            onClick={getByReportType}
+          >
+            filtruj
+          </button>
         </div>
       </div>
     </div>

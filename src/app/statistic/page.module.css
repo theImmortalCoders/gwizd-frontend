@@ -22,9 +22,40 @@
   border-radius: 20px;
   backdrop-filter: blur(20px);
   padding: 0px 40px 30px 40px;
-  max-width: 50vh;
+  max-width: 55vh;
   height: auto;
+}
+.container h3 {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 .animalList p {
   color: var(--almostwhite);
+}
+.filters {
+  width: 180px;
+  height: 50px;
+  background-color: var(--darkgrey);
+  border-radius: 10px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 5vh;
+}
+.filters label {
+  color: var(--almostwhite);
+}
+.buttonf {
+  margin-top: 5vh;
+  width: 150px;
+  height: 50px;
+  background-color: var(--darkgrey);
+  border-radius: 10px;
+  color: var(--almostwhite);
+}
+.selectform {
+  width: 100%;
+  height: 40px;
+  font-size: 2vh;
+  background-color: var(--darkgrey);
+  color: var(--whitetowrite);
 }
