@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export default function Przekierowanie() {
+export default function Historyy() {
   const myCookies = cookies();
   if (!myCookies.get("JSESSIONID")) {
     redirect("/login");
   } else {
-    redirect("/achievement");
+    redirect("/history");
   }
 
   return 0;
