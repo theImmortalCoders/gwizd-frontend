@@ -21,7 +21,10 @@ const Home: NextPage = () => {
     console.log(reports);
     setReps(
       reports.map((rep: any) => {
-        return { lat: rep.location.latitude, lng: rep.location.longitude };
+        return {
+          repType: rep.reportType,
+          location: { lat: rep.location.latitude, lng: rep.location.longitude },
+        };
       })
     );
   };
