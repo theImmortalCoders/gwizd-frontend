@@ -89,7 +89,7 @@ export default function report() {
                 </option>
               </select>
             </div>
-            <div>
+            <div className={styles.labelll}>
               <label>Zwierze: </label>
               <select
                 className={styles.selectform}
@@ -106,7 +106,7 @@ export default function report() {
                 })}
               </select>
             </div>
-            <div>
+            <div className={styles.labelll}>
               <label>Ilość: </label>
               <input
                 className={styles.selectform}
@@ -117,7 +117,7 @@ export default function report() {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className={styles.labelll}>
               <label>Tytuł: </label>
               <input
                 className={styles.selectform}
@@ -127,7 +127,7 @@ export default function report() {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className={styles.labelll}>
               <label>Opis: </label>
               <textarea
                 className={styles.selectformtextarea}
