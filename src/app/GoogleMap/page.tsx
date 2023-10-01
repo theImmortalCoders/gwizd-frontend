@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         console.log(reports)
         setReps(
             reports.map((rep: any) =>{
-                return {lat: rep.location.latitude, lng: rep.location.longitude}
+                return {repType: rep.reportType,location: {lat: rep.location.latitude, lng: rep.location.longitude}}
             })
         )
     }
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         () => ({
             disableDefaultUI: true,
             clickableIcons: true,
-            scrollwheel: false,
+            scrollwheel: true,
         }),
         []
     );
@@ -65,12 +65,12 @@ const Home: NextPage = () => {
                     console.log(rep)
                     return(
                         <CircleF
-                            center={rep}
-                            radius={1000}
+                            center={rep.location}
+                            radius={800}
                             options={{
-                                fillColor: 'red',
-                                strokeColor: 'green',
-                                strokeOpacity: 0.8,
+                                fillColor: (rep.repType==="DANGER") ? 'red':'blue',
+                                strokeColor: (rep.repType==="DANGER") ? 'red':'blue',
+                                strokeOpacity: 0.1,
                             }}
                         />
                     )
