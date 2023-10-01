@@ -103,7 +103,7 @@ export default function Statistic() {
                 className={styles.selectform}
                 name="reportType"
                 value={statData.spotType}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
               >
                 {animalList.map((animal) => {
                   return (
