@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 export default function report() {
@@ -40,7 +40,9 @@ export default function report() {
     getAnimals();
   }, []);
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -76,7 +78,7 @@ export default function report() {
                 className={styles.selectform}
                 name="reportType"
                 value={formData.reportType}
-                onChange={() => handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <option className={styles.selectform} value={"SPOT"}>
                   Dzikie Zwierze{" "}
@@ -95,7 +97,7 @@ export default function report() {
                 className={styles.selectform}
                 name="animalId"
                 value={formData.animalId}
-                onChange={() => handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 {animalList.map((animal) => {
                   return (

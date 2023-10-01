@@ -60,7 +60,9 @@ export default function Statistic() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setStatData({
@@ -97,12 +99,11 @@ export default function Statistic() {
 
             <FormControl variant="outlined" className={styles.filters}>
               <InputLabel>Liczba populacji</InputLabel>
-              <Select
+              <select
                 className={styles.selectform}
+                name="reportType"
                 value={statData.spotType}
-                onChange={() => handleChange}
-                name="myId"
-                label="Liczba populacji"
+                onChange={(e) => handleChange(e)}
               >
                 {animalList.map((animal) => {
                   return (
@@ -111,7 +112,7 @@ export default function Statistic() {
                     </MenuItem>
                   );
                 })}
-              </Select>
+              </select>
             </FormControl>
             {/*
             <FormControl variant="outlined" className={styles.filters}>
