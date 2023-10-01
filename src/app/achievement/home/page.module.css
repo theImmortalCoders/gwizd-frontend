@@ -13,8 +13,10 @@
   min-height: 93vh;
 }
 .container {
-  padding-left: 20vw;
-  padding-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: var(--almostwhite);
   font-size: clamp(0.2rem, 1.5vw, 2.5rem);
   text-shadow: 1px 1px 2px var(--verydarkgrey);
