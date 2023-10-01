@@ -78,7 +78,7 @@ export default function report() {
                 onChange={() => handleChange}
               >
                 <option className={styles.selectform} value={"SPOT"}>
-                  Dzikie Zwierze{" "}
+                  Dzikie Zwierze
                 </option>
                 <option className={styles.selectform} value={"HOME"}>
                   Zwierzę Domowe

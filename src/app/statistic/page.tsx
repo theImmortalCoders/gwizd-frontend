@@ -96,13 +96,13 @@ export default function Statistic() {
             */}
 
             <FormControl variant="outlined" className={styles.filters}>
-              <InputLabel>Liczba populacji</InputLabel>
+              <InputLabel>Zwierzę</InputLabel>
               <Select
                 className={styles.selectform}
                 value={statData.spotType}
                 onChange={() => handleChange}
                 name="myId"
-                label="Liczba populacji"
+                label="Zwierzę"
               >
                 {animalList.map((animal) => {
                   return (
