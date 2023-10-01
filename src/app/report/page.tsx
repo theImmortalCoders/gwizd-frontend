@@ -76,7 +76,7 @@ export default function report() {
                 className={styles.selectform}
                 name="reportType"
                 value={formData.reportType}
-                onChange={handleChange}
+                onChange={() => handleChange}
               >
                 <option className={styles.selectform} value={"SPOT"}>
                   Dzikie Zwierze{" "}
@@ -95,7 +95,7 @@ export default function report() {
                 className={styles.selectform}
                 name="animalId"
                 value={formData.animalId}
-                onChange={handleChange}
+                onChange={() => handleChange}
               >
                 {animalList.map((animal) => {
                   return (
