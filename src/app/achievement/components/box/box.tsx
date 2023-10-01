@@ -1,11 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./box.module.css";
 import { BsTrophy } from "react-icons/bs";
 import AchievementButton from "../button/button";
 import AchievementButtonGlow from "../buttonglow/buttonglow";
 
 export default function AchievementBox() {
+  const [achievements, setAchievements] = useState([]);
+  const getAchievements = async () => {
+    const response = await fetch("http://localhost:8080/api/user/me", {
+      credentials: "include",
+    });
+    const user = await response.json();
+    setAchievements(user.achievements);
+    console.log(achievements);
+  };
+  useEffect(() => {
+    getAchievements();
+  }, []);
+
   const iconName1 = BsTrophy;
   const trophyName1 = "Zoolog";
   const trophyDescription1 = "Zgłoś 5 zwierząd";
