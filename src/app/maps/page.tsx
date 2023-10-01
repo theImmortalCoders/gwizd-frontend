@@ -48,7 +48,6 @@ const Home: NextPage = () => {
   }
 
   return (
-<<<<<<< Updated upstream
     <div>
       <GoogleMap
         options={mapOptions}
@@ -57,48 +56,22 @@ const Home: NextPage = () => {
         mapTypeId={google.maps.MapTypeId.ROADMAP}
         mapContainerStyle={{ width: "100vw", height: "90vh" }}
       >
-        {reps.map((rep) => {
+        {reps.map((rep: any) => {
           console.log(rep);
           return (
             <CircleF
-              center={rep}
+              center={rep.location}
               radius={1000}
               options={{
-                fillColor: "red",
-                strokeColor: "green",
-                strokeOpacity: 0.8,
+                fillColor: rep.repType === "DANGER" ? "red" : "blue",
+                strokeColor: rep.repType === "DANGER" ? "red" : "blue",
+                strokeOpacity: 0.1,
               }}
             />
           );
         })}
       </GoogleMap>
     </div>
-=======
-      <div>
-        <GoogleMap
-            options={mapOptions}
-            zoom={12}
-            center={mapCenter}
-            mapTypeId={google.maps.MapTypeId.ROADMAP}
-            mapContainerStyle={{ width: '100vw', height: '90vh' }}
-        >
-          {reps.map((rep: any) => {
-            console.log(rep)
-            return(
-                <CircleF
-                    center={rep.location}
-                    radius={1000}
-                    options={{
-                      fillColor: (rep.repType==="DANGER") ? 'red':'blue',
-                      strokeColor: (rep.repType==="DANGER") ? 'red':'blue',
-                      strokeOpacity: 0.1,
-                    }}
-                />
-            )
-          })}
-        </GoogleMap>
-      </div>
->>>>>>> Stashed changes
   );
 };
 
