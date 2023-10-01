@@ -1,0 +1,34 @@
+.boxes {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: none;
+  border: solid var(--grey);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+}
+.boxicon {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.boxicon svg {
+  padding: 10px;
+  width: 7vh;
+  height: auto;
+}
+.boxtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: solid var(--grey);
+  flex-direction: column;
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
+}
+.boxtext p {
+  color: var(--whitetowrite);
+  font-size: clamp(0.8rem, 1.5vw, 2.5rem);
+}
