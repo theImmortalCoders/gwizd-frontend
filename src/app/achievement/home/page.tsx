@@ -1,28 +1,47 @@
-"use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { useState } from "react";
 import { BsTrophy } from "react-icons/bs";
 import AchievementButton from "../components/button/button";
 import AchievementButtonGlow from "../components/buttonglow/buttonglow";
 
-export default function Home() {
+function Home() {
   const [achievements, setAchievements] = useState([]);
+
   const getAchievements = async () => {
-    const response = await fetch("http://localhost:8080/api/user/me", {
-      credentials: "include",
-    });
-    const user = await response.json();
-    setAchievements(user.achievements);
-    console.log(achievements);
+    try {
+      const response = await fetch("http://localhost:8080/api/user/me", {
+        credentials: "include",
+      });
+      const user = await response.json();
+      setAchievements(user.achievements);
+      console.log(achievements);
+    } catch (error) {
+      console.error("Error fetching achievements:", error);
+    }
   };
+
+  const [user, setUser] = useState(null);
+
+  const getUser = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/user/me", {
+        credentials: "include",
+      });
+      const user = await response.json();
+      setUser(user.id);
+    } catch (error) {
+      console.error("Error fetching user:", error);
+    }
+  };
+
   useEffect(() => {
+    getUser();
     getAchievements();
   }, []);
 
   const iconName1 = BsTrophy;
   const trophyName1 = "Zoolog";
-  const trophyDescription1 = "Zgłoś 5 zwierząd";
+  const trophyDescription1 = "Zgłoś 5 zwierząt";
 
   const trophyName2 = "Byczek";
   const trophyDescription2 = "Zgłoś byka";
@@ -32,6 +51,7 @@ export default function Home() {
 
   const trophyName4 = "Sarenka";
   const trophyDescription4 = "Zgłoś sarnę";
+
   return (
     <div className={styles.achievementpagemain}>
       <div className={styles.backgroundImage}>
@@ -64,3 +84,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
