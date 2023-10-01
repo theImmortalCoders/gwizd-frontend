@@ -1,26 +1,65 @@
 .animalspagemain {
-  width: 100vw;
   min-height: 93vh;
 }
 /*https://pixabay.com/pl/photos/lis-red-fox-przebieg%C5%82y-7017260/*/
-.backgroundImage {
-  background-image: url("./animals.jpg");
+.container {
+  background-image: url("./backg.webp");
   background-size: cover;
   background-position: center top 70%;
   padding-top: 5vh;
   padding-bottom: 5vh;
-  width: auto;
   height: 93vh;
-}
-.container {
-  padding-left: 25vw;
-  padding-top: 8vh;
   color: var(--almostwhite);
-  font-size: clamp(0.8rem, 2vw, 2.5rem);
-  text-shadow: 1px 1px 2px var(--verydarkgrey);
+  font-size: clamp(0.9rem, 2vw, 2.8rem);
+  font-weight: 700;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5vh;
+  color: black;
+}
+.container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 0 5vw;
 }
 .container p {
-  padding-right: 20vw;
-  padding-bottom: 3vh;
   font-weight: 600;
+  border-left: 1px solid green;
+  padding-left: 1vw;
+  margin: 3vh 0;
+}
+.container h1 {
+  border-bottom: 1px solid green;
+  margin-top: 15vh;
+}
+.container h2 {
+  margin-top: 5px;
+  margin-bottom: 5vh;
+}
+.container h4 {
+  margin-bottom: 50vh;
+}
+.button {
+  background-color: green;
+  color: white;
+  text-align: center;
+  height: 10vh;
+}
+.button:hover {
+  background-color: rgb(4, 90, 4);
+  color: rgb(173, 171, 171);
+}
+@media (min-width: 700px) {
+  .container {
+    padding: 0 20vw;
+    font-size: medium;
+  }
+  .container img {
+    width: 80% !important;
+  }
 }

@@ -28,9 +28,6 @@ export default function Navbar() {
           <a className={styles.menuDesktop} href="/animals">
             Zwierzęta w Mieście
           </a>
-          <a className={styles.menuDesktop} href="/contact">
-            Kontakt
-          </a>
         </div>
 
         <div className={styles.spaceCenterPhone}>
@@ -47,11 +44,6 @@ export default function Navbar() {
           <a className={styles.menuPhone} href="/animals">
             <button>
               <BsMegaphone size="3vh" />
-            </button>
-          </a>
-          <a className={styles.menuPhone} href="/contact">
-            <button>
-              <BiPhone size="3vh" />
             </button>
           </a>
         </div>

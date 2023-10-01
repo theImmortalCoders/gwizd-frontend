@@ -75,6 +75,14 @@
   color: var(--green);
 }
 
+.navbarRight a:hover {
+  color: rgb(214, 212, 212);
+}
+.menuDesktopAndPhone button:hover {
+  color: rgb(214, 212, 212);
+  cursor: pointer;
+}
+
 /* Mobile */
 @media (max-width: 770px) {
   .menuPhone {
