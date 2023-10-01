@@ -9,18 +9,18 @@ const Sidebar: React.FC = () => {
     <nav className={styles.sidebar}>
       <ul className={styles.sidebarlist}>
         <li className={styles.sidebaritem}>
-          <Link to="/achievement">
-            <div className={styles.iconTextContainer}>
-              <BsTrophy className={styles.icon} />
-              <h4>Osiągnięcia</h4>
-            </div>
-          </Link>
-        </li>
-        <li className={styles.sidebaritem}>
           <Link to="/history">
             <div className={styles.iconTextContainer}>
               <AiOutlineClockCircle className={styles.icon} />
               <h4>Historia</h4>
+            </div>
+          </Link>
+        </li>
+        <li className={styles.sidebaritem}>
+          <Link to="/achievement">
+            <div className={styles.iconTextContainer}>
+              <BsTrophy className={styles.icon} />
+              <h4>Osiągnięcia</h4>
             </div>
           </Link>
         </li>

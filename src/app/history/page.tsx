@@ -1,13 +1,22 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+"use client";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./home/page";
+import History from "./history/page";
+import Sidebar from "./components/sidebar/sidebar";
 
-export default function Historyy() {
-  const myCookies = cookies();
-  if (!myCookies.get("JSESSIONID")) {
-    redirect("/login");
-  } else {
-    redirect("/achievement");
-  }
-
-  return 0;
+function SidebarRouting() {
+  return (
+    <Router>
+      <div className="App">
+        <Sidebar />
+        <Routes>
+          <Route path="/history" element={<History />} />
+          <Route path="/achievement" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
+
+export default SidebarRouting;
