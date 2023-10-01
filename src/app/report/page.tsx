@@ -70,7 +70,7 @@ export default function report() {
         <div className={styles.container}>
           <div className={styles.header}>Formularz zgłoszeniowy</div>
           <form onSubmit={handleSubmit} className={styles.text}>
-            <div>
+            <div className={styles.labelll}>
               <label>Typ spotkania: </label>
               <select
                 className={styles.selectform}

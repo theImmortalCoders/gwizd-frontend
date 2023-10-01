@@ -3,7 +3,7 @@
 }
 /*https://pixabay.com/pl/photos/lis-red-fox-przebieg%C5%82y-7017260/*/
 .container1 {
-  background-image: url("../statistic/achievement.jpg");
+  background-image: url("../achievement/home/achievement.jpg");
   background-size: cover;
   background-position: center top 30%;
   padding-top: 5vh;
@@ -17,6 +17,7 @@
   flex-direction: column;
   padding: 5vh;
   color: var(--almostwhite);
+  box-shadow: 5px 5px 5px 0px black;
 }
 .container1 p {
   font-weight: 600;
@@ -33,7 +34,6 @@
   margin-bottom: 2vh;
 }
 .container1 h3 {
-  margin-bottom: 10vh;
   margin-top: 10vh;
 }
 .container1 h4 {
