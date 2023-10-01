@@ -84,34 +84,25 @@ export default function Statistic() {
         <div className={styles.container}>
           <Typography variant="h3">Statystyki</Typography>
 
-          <div className={styles.filters}>
+          <div>
+            {/*
             <TextField
+              className={styles.filters}
               label="Szukaj"
               variant="outlined"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+            */}
 
-            <FormControl variant="outlined">
-              <InputLabel>Liczba populacji</InputLabel>
+            <FormControl variant="outlined" className={styles.filters}>
+              <InputLabel>Zwierzę</InputLabel>
               <Select
+                className={styles.selectform}
                 value={statData.spotType}
                 onChange={() => handleChange}
-                label="Liczba populacji"
-              >
-                <MenuItem value="SPOT">spot</MenuItem>
-                <MenuItem value="HOME">homee</MenuItem>
-                <MenuItem value="DANGER">dendżer</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl variant="outlined">
-              <InputLabel>Stopień zagrożenia</InputLabel>
-              <Select
-                value={statData.myId}
                 name="myId"
-                onChange={() => handleChange}
-                label="Stopień zagrożenia"
+                label="Zwierzę"
               >
                 {animalList.map((animal) => {
                   return (
@@ -122,6 +113,21 @@ export default function Statistic() {
                 })}
               </Select>
             </FormControl>
+            {/*
+            <FormControl variant="outlined" className={styles.filters}>
+              <InputLabel>Stopień zagrożenia</InputLabel>
+              <Select
+                className={styles.selectform}
+                value={statData.spotType}
+                onChange={handleChange}
+                label="Stopień zagrożenia"
+              >
+                <MenuItem value="SPOT">spot</MenuItem>
+                <MenuItem value="HOME">homee</MenuItem>
+                <MenuItem value="DANGER">dendżer</MenuItem>
+              </Select>
+            </FormControl>
+          */}
           </div>
 
           <ul className={styles.animalList}>
@@ -129,7 +135,11 @@ export default function Statistic() {
               return <li>{obiekt.animal.name}</li>;
             })}
           </ul>
-          <button name={"filtruj"} onClick={getByReportType}>
+          <button
+            className={styles.buttonf}
+            name={"filtruj"}
+            onClick={getByReportType}
+          >
             filtruj
           </button>
         </div>

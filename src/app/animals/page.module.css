@@ -19,6 +19,7 @@
   color: var(--almostwhite);
   box-shadow: 5px 5px 5px 0px black;
 }
+
 .blur {
   display: flex;
   margin: auto;
@@ -29,7 +30,7 @@
   backdrop-filter: blur(5px);
   padding: 0px 40px 30px 40px;
   width: 80%;
-  min-width: 400px;
+  min-width: 200px;
   height: auto;
 }
 .container1 p {
@@ -62,7 +63,7 @@
   padding-bottom: 5vh;
   min-height: 100vh;
   color: var(--almostwhite);
-  font-size: x-large;
+  font-size: large;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -151,4 +152,61 @@
 .submitbutton:hover {
   background-color: var(--whitetowrite);
   color: var(--darkgrey);
+}
+@media (max-width: 400px) {
+  .container1 h1 {
+    font-size: large;
+    max-width: 200px;
+  }
+  .container1 p {
+    font-size: medium;
+  }
+  .container1 h2 {
+    font-size: medium;
+  }
+  .container1 h3 {
+    font-size: medium;
+  }
+  .container1 h4 {
+    font-size: medium;
+  }
+
+  .container2 h1 {
+    font-size: large;
+    max-width: 200px;
+  }
+  .container2 p {
+    font-size: medium;
+  }
+  .container2 h2 {
+    font-size: medium;
+  }
+  .container2 h3 {
+    font-size: medium;
+  }
+  .container2 h4 {
+    font-size: medium;
+  }
+
+  .container3 h1 {
+    font-size: large;
+    max-width: 200px;
+  }
+  .container3 p {
+    font-size: medium;
+  }
+  .container3 h2 {
+    font-size: medium;
+  }
+  .container3 h3 {
+    font-size: medium;
+  }
+  .container3 h4 {
+    font-size: medium;
+  }
+  .submitbutton {
+    height: 50px;
+    width: 180px;
+    font-size: medium;
+  }
 }

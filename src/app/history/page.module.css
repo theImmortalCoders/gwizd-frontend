@@ -38,3 +38,15 @@
 .historyTable th {
   text-align: left;
 }
+@media (max-width: 700px) {
+  .containertable {
+    overflow-x: scroll;
+  }
+  .backgroundImage {
+    overflow-x: scroll;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
