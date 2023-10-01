@@ -1,16 +1,39 @@
 'use client'
 import {CircleF, GoogleMap, MarkerF, useLoadScript} from "@react-google-maps/api";
 import type { NextPage} from "next";
-import {useMemo} from "react";
-
-import {FaLocationDot, FaMapLocationDot} from "react-icons/fa6";
+import {useEffect, useMemo, useState} from "react";
+import {FaMapLocationDot} from "react-icons/fa6";
 
 const Home: NextPage = () => {
+    const [reps,setReps] = useState([])
     const libraries = useMemo(() => ['places'], []);
     const mapCenter = useMemo(
         () => ({ lat: 50.0678693, lng: 19.9916377 }),
         []
     );
+    const map1 = useMemo(
+        () => ({ lat: 50.0678693, lng: 19.9916377 }),
+        []
+    );
+    const map2 = useMemo(
+        () => ({ lat: 50.0678693, lng: 19.9916377 }),
+        []
+    );
+
+    const getAlertLocation =  async () => {
+        const response = await fetch("http://localhost:8080/api/report");
+        const reports = await response.json();
+        console.log(reports)
+        setReps(
+            reports.map((rep: any) =>{
+                return {lat: rep.location.latitude, lng: rep.location.longitude}
+            })
+        )
+    }
+
+    useEffect(() => {
+        getAlertLocation()
+    },[])
 
     const mapOptions = useMemo<google.maps.MapOptions>(
         () => ({
@@ -31,36 +54,26 @@ const Home: NextPage = () => {
 
     return (
         <div>
-            <div>
-                <p>This is Sidebar...</p>
-            </div>
             <GoogleMap
                 options={mapOptions}
-                zoom={16}
+                zoom={12}
                 center={mapCenter}
                 mapTypeId={google.maps.MapTypeId.ROADMAP}
-                mapContainerStyle={{ width: '400px', height: '400px' }}
-                onLoad={() => console.log('Map Component Loaded...')}
+                mapContainerStyle={{ width: '100vw', height: '90vh' }}
             >
-                <MarkerF
-                    position={mapCenter}
-                    icon={FaMapLocationDot}
-                    onLoad={() => console.log('Marker Loaded')} />
-
-                {[1000, 500].map((radius, idx) => {
-                    return (
+                {reps.map((rep) => {
+                    console.log(rep)
+                    return(
                         <CircleF
-                            key={idx}
-                            center={mapCenter}
-                            radius={radius}
-                            onLoad={() => console.log('Circle Load...')}
+                            center={rep}
+                            radius={1000}
                             options={{
-                                fillColor: radius > 1000 ? 'red' : 'blue',
-                                strokeColor: radius > 1000 ? 'red' : 'blue',
+                                fillColor: 'red',
+                                strokeColor: 'green',
                                 strokeOpacity: 0.8,
                             }}
                         />
-                    );
+                    )
                 })}
             </GoogleMap>
         </div>
