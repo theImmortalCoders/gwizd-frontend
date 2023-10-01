@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const map2 = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
 
   const getAlertLocation = async () => {
-    const response = await fetch("http://localhost:8080/api/report");
+    const response = await fetch("https://api.gwizd.online/api/report");
     const reports = await response.json();
     console.log(reports);
     setReps(

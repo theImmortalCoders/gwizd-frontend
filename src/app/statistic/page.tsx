@@ -27,7 +27,7 @@ export default function Statistic() {
 
   const getByReportType = async () => {
     const response = await fetch(
-      `http://localhost:8080/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
+      `https://api.gwizd.online/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
     );
     const wyniki = await response.json();
     setDane(
@@ -60,7 +60,9 @@ export default function Statistic() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setStatData({
@@ -96,13 +98,12 @@ export default function Statistic() {
             */}
 
             <FormControl variant="outlined" className={styles.filters}>
-              <InputLabel>Zwierzę</InputLabel>
-              <Select
+              <InputLabel>Liczba populacji</InputLabel>
+              <select
                 className={styles.selectform}
+                name="reportType"
                 value={statData.spotType}
-                onChange={() => handleChange}
-                name="myId"
-                label="Zwierzę"
+                onChange={handleChange}
               >
                 {animalList.map((animal) => {
                   return (
@@ -111,7 +112,7 @@ export default function Statistic() {
                     </MenuItem>
                   );
                 })}
-              </Select>
+              </select>
             </FormControl>
             {/*
             <FormControl variant="outlined" className={styles.filters}>

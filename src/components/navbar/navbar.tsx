@@ -6,7 +6,7 @@ import { BsFillPersonFill, BsMegaphone } from "react-icons/bs";
 import { BiPhone } from "react-icons/bi";
 
 /* Logo */
-import logoWhite from "./components/logo_white.png";
+import logoWhite from "../../app/statistic/logo_white.png";
 import Image from "next/image";
 
 export default function Navbar() {

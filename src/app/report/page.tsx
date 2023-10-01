@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 export default function report() {
@@ -40,7 +40,9 @@ export default function report() {
     getAnimals();
   }, []);
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -52,7 +54,7 @@ export default function report() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
-    const response = await fetch("http://localhost:8080/api/report", {
+    const response = await fetch("https://api.gwizd.online/api/report", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(formData),
@@ -61,6 +63,7 @@ export default function report() {
       },
     });
     const data = await response;
+    window.location.href = "/";
   };
 
   return (
@@ -75,10 +78,10 @@ export default function report() {
                 className={styles.selectform}
                 name="reportType"
                 value={formData.reportType}
-                onChange={() => handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <option className={styles.selectform} value={"SPOT"}>
-                  Dzikie Zwierze
+                  Dzikie Zwierze{" "}
                 </option>
                 <option className={styles.selectform} value={"HOME"}>
                   Zwierzę Domowe
@@ -94,7 +97,7 @@ export default function report() {
                 className={styles.selectform}
                 name="animalId"
                 value={formData.animalId}
-                onChange={() => handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 {animalList.map((animal) => {
                   return (

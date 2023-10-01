@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
         </li>
         <li className={styles.sidebaritemlogout}>
           <a
-            href="http://localhost:8080/api/oauth2/logout"
+            href="https://api.gwizd.online/api/oauth2/logout"
             className={styles.logout}
           >
             <AiOutlineLogout className={styles.icon} />
