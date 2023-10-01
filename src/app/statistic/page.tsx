@@ -27,7 +27,7 @@ export default function Statistic() {
 
   const getByReportType = async () => {
     const response = await fetch(
-      `http://localhost:8080/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
+      `https://api.gwizd.online/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
     );
     const wyniki = await response.json();
     setDane(

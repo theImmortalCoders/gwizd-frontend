@@ -6,7 +6,7 @@ import Home from "../achievement/page";
 function History() {
   const [user, setUser] = useState([]);
   const getUser = async () => {
-    const response = await fetch("http://localhost:8080/api/user/me", {
+    const response = await fetch("https://api.gwizd.online/api/user/me", {
       credentials: "include",
     });
     const user = await response.json();
@@ -15,7 +15,7 @@ function History() {
   const [reports, setReports] = useState([]);
   const getReports = async () => {
     const response = await fetch(
-      `http://localhost:8080/api/report/?userId=${user}`
+      `https://api.gwizd.online/api/report/?userId=${user}`
     );
     const reports = await response.json();
     console.log(reports);

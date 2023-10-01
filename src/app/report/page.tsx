@@ -52,7 +52,7 @@ export default function report() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
-    const response = await fetch("http://localhost:8080/api/report", {
+    const response = await fetch("https://api.gwizd.online/api/report", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(formData),

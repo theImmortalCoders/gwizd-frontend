@@ -10,7 +10,7 @@ function Home() {
 
   const getAchievements = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/user/me", {
+      const response = await fetch("https://api.gwizd.online/api/user/me", {
         credentials: "include",
       });
       const user = await response.json();
@@ -25,7 +25,7 @@ function Home() {
 
   const getUser = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/user/me", {
+      const response = await fetch("https://api.gwizd.online/api/user/me", {
         credentials: "include",
       });
       const user = await response.json();
