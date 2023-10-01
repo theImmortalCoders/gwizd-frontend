@@ -99,9 +99,8 @@ export default function Statistic() {
               <InputLabel>Liczba populacji</InputLabel>
               <Select
                 className={styles.selectform}
-                value={statData.myId}
-                name="myId"
-                onChange={handleChange}
+                value={statData.spotType}
+                onChange={() => handleChange}
                 label="Liczba populacji"
               >
                 {animalList.map((animal) => {
