@@ -78,9 +78,13 @@ export default function report() {
                 value={formData.reportType}
                 onChange={handleChange}
               >
-                <option value={"SPOT"}>Dzikie Zwierze </option>
-                <option value={"HOME"}>Zwierzę Domowe</option>
-                <option value={"DANGER"}>
+                <option className={styles.selectform} value={"SPOT"}>
+                  Dzikie Zwierze{" "}
+                </option>
+                <option className={styles.selectform} value={"HOME"}>
+                  Zwierzę Domowe
+                </option>
+                <option className={styles.selectform} value={"DANGER"}>
                   Zwierzę w niebezpiecznym miejscu
                 </option>
               </select>
