@@ -22,6 +22,12 @@
 .sidebar:hover .sidebaritem h4 {
   display: flex;
 }
+.sidebar .sidebaritemlogout h4 {
+  display: none;
+}
+.sidebar:hover .sidebaritemlogout h4 {
+  display: flex;
+}
 .sidebarlist {
   list-style-type: none;
   margin: 0;
@@ -33,10 +39,26 @@
   align-items: center;
   width: 100%;
   color: var(--almostwhite);
+  padding: 10px 16px;
+  display: flex;
+  transition: background-color 0.3s;
+}
+.sidebaritemlogout {
+  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  color: var(--almostwhite);
   width: 100%;
   padding: 10px 16px;
   display: flex;
   transition: background-color 0.3s;
+}
+.sidebaritemlogout:hover {
+  color: var(--darkgrey);
+  background-color: var(--almostwhite);
+}
+.sidebaritemlogout:hover h4 {
+  color: var(--darkgrey);
 }
 .icon {
   margin-right: 10px;
@@ -85,7 +107,13 @@
   .sidebaritem {
     padding: 5px 5px;
   }
+  .sidebaritemlogout {
+    padding: 5px 5px;
+  }
   .sidebar:hover .sidebaritem h4 {
+    display: none;
+  }
+  .sidebar:hover .sidebaritemlogout h4 {
     display: none;
   }
 }

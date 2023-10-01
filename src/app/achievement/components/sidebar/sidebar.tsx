@@ -24,7 +24,7 @@ const Sidebar: React.FC = () => {
             </div>
           </Link>
         </li>
-        <li className={styles.sidebaritem}>
+        <li className={styles.sidebaritemlogout}>
           <a
             href="http://localhost:8080/api/oauth2/logout"
             className={styles.logout}
