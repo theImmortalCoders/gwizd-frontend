@@ -20,11 +20,19 @@ const Home: NextPage = () => {
     const reports = await response.json();
     console.log(reports);
     setReps(
+<<<<<<< Updated upstream
       reports.map((rep: any) => {
         return { lat: rep.location.latitude, lng: rep.location.longitude };
       })
     );
   };
+=======
+        reports.map((rep: any) =>{
+          return {repType: rep.reportType , location: {lat: rep.location.latitude, lng: rep.location.longitude}}
+        })
+    )
+  }
+>>>>>>> Stashed changes
 
   useEffect(() => {
     getAlertLocation();
@@ -48,6 +56,7 @@ const Home: NextPage = () => {
   }
 
   return (
+<<<<<<< Updated upstream
     <div>
       <GoogleMap
         options={mapOptions}
@@ -72,6 +81,32 @@ const Home: NextPage = () => {
         })}
       </GoogleMap>
     </div>
+=======
+      <div>
+        <GoogleMap
+            options={mapOptions}
+            zoom={12}
+            center={mapCenter}
+            mapTypeId={google.maps.MapTypeId.ROADMAP}
+            mapContainerStyle={{ width: '100vw', height: '90vh' }}
+        >
+          {reps.map((rep: any) => {
+            console.log(rep)
+            return(
+                <CircleF
+                    center={rep.location}
+                    radius={1000}
+                    options={{
+                      fillColor: (rep.repType==="DANGER") ? 'red':'blue',
+                      strokeColor: (rep.repType==="DANGER") ? 'red':'blue',
+                      strokeOpacity: 0.1,
+                    }}
+                />
+            )
+          })}
+        </GoogleMap>
+      </div>
+>>>>>>> Stashed changes
   );
 };
 
