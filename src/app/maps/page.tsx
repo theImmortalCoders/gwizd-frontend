@@ -20,19 +20,11 @@ const Home: NextPage = () => {
     const reports = await response.json();
     console.log(reports);
     setReps(
-<<<<<<< Updated upstream
       reports.map((rep: any) => {
         return { lat: rep.location.latitude, lng: rep.location.longitude };
       })
     );
   };
-=======
-        reports.map((rep: any) =>{
-          return {repType: rep.reportType , location: {lat: rep.location.latitude, lng: rep.location.longitude}}
-        })
-    )
-  }
->>>>>>> Stashed changes
 
   useEffect(() => {
     getAlertLocation();
