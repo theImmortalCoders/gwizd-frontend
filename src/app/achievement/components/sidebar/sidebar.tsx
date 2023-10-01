@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineClockCircle, AiOutlineLogout } from "react-icons/ai";
+import { BsTrophy } from "react-icons/bs";
 import styles from "./sidebar.module.css";
 
 const Sidebar: React.FC = () => {
@@ -10,7 +11,7 @@ const Sidebar: React.FC = () => {
         <li className={styles.sidebaritem}>
           <Link to="/achievement">
             <div className={styles.iconTextContainer}>
-              <AiOutlineHome className={styles.icon} />
+              <BsTrophy className={styles.icon} />
               <h4>Osiągnięcia</h4>
             </div>
           </Link>
@@ -18,7 +19,7 @@ const Sidebar: React.FC = () => {
         <li className={styles.sidebaritem}>
           <Link to="/history">
             <div className={styles.iconTextContainer}>
-              <AiOutlineHome className={styles.icon} />
+              <AiOutlineClockCircle className={styles.icon} />
               <h4>Historia</h4>
             </div>
           </Link>

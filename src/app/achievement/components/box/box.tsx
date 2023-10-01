@@ -3,7 +3,6 @@ import React from "react";
 import AchievementButton from "../button/button";
 import styles from "./box.module.css";
 import { BsTrophy } from "react-icons/bs";
-import { BiSolidAngry } from "react-icons/bi";
 
 export default function AchievementBox() {
   const iconName1 = BsTrophy;

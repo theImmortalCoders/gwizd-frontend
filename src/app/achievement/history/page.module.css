@@ -13,12 +13,30 @@
   min-height: 93vh;
 }
 .container {
-  padding-left: 15vw;
+  padding-left: 20vw;
   padding-top: 2vh;
+  margin-right: 5vw;
   color: var(--almostwhite);
   font-size: clamp(0.8rem, 2vw, 2.5rem);
   text-shadow: 1px 1px 2px var(--verydarkgrey);
 }
 .container h1 {
   padding-bottom: 4vh;
+}
+.containertable {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  background: transparent;
+  border: 2px solid var(--blur);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  padding: 0px 40px 30px 40px;
+  min-width: 70vh;
+  min-height: 50vh;
+  font-size: clamp(0.8rem, 1.2vw, 2.5rem);
+}
+.historyTable th {
+  text-align: left;
 }
