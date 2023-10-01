@@ -11,8 +11,8 @@ function SidebarRouting() {
       <div className="App">
         <Sidebar />
         <Routes>
-          <Route path="/achievement" element={<Home />} />
           <Route path="/history" element={<History />} />
+          <Route path="/achievement" element={<Home />} />
         </Routes>
       </div>
     </Router>
