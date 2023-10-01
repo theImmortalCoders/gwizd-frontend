@@ -39,6 +39,9 @@
 .text {
   font-size: 2vh;
 }
+.labelll {
+  color: var(--whitetowrite);
+}
 .selectform {
   width: 100%;
   height: 40px;
