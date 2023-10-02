@@ -38,7 +38,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Overview
-#### The frontend of this app can be found on : https://github.com/Chopy4/gwizd-backend
+#### The backend of this app can be found on : https://github.com/Chopy4/gwizd-backend
 
 
 The application is designed to allow the user to record their observations 
