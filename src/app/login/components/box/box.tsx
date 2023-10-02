@@ -3,7 +3,7 @@ import React from "react";
 import LoginButton from "../button/button";
 import styles from "./box.module.css";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { gwizdOnline } from "../variables";
+import { zmienna } from "../../../variables";
 
 interface LoginBoxProps {
   loginText: string;
@@ -11,8 +11,8 @@ interface LoginBoxProps {
 
 export default function LoginBox({ loginText }: LoginBoxProps) {
   const handleLoginClick = () => {
-    document.cookie = "redirectUrl=http://localhost:3000/";
-    window.location.href = "${gwizdOnline}/api/oauth2/authorize/google";
+    document.cookie = `redirectUrl=${zmienna}`;
+    window.location.href = `${zmienna}/api/oauth2/authorize/google`;
   };
 
   const iconName1 = AiFillGoogleCircle;
@@ -22,7 +22,7 @@ export default function LoginBox({ loginText }: LoginBoxProps) {
       <div className={styles.text}>{loginText}</div>
       <a
         onClick={handleLoginClick}
-        href="https://api.gwizd.online/api/oauth2/authorize/google"
+        href={`${zmienna}/api/oauth2/authorize/google`}
       >
         <LoginButton iconname={iconName1} companyname={companyName1} />
       </a>

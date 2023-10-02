@@ -4,13 +4,14 @@ import styles from "./page.module.css";
 import { BsTrophy } from "react-icons/bs";
 import AchievementButton from "../history/components/button/button";
 import AchievementButtonGlow from "../history/components/buttonglow/buttonglow";
+import { zmienna } from "../variables";
 
 function Home() {
   const [achievements, setAchievements] = useState([]);
 
   const getAchievements = async () => {
     try {
-      const response = await fetch("https://api.gwizd.online/api/user/me", {
+      const response = await fetch(`${zmienna}/api/user/me`, {
         credentials: "include",
       });
       const user = await response.json();
