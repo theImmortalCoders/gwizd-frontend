@@ -5,7 +5,7 @@ export default function Homepage() {
     <div className={styles.reportpagemain}>
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
-          <a href="/report">
+          <a href="/redirect_log_rep">
             <button>Widzę zwierzę!</button>
           </a>
         </div>

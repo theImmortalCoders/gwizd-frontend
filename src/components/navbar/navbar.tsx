@@ -47,7 +47,7 @@ export default function Navbar() {
             </button>
           </a>
         </div>
-        <a className={styles.menuDesktopAndPhone} href="/przekierowanie">
+        <a className={styles.menuDesktopAndPhone} href="/redirect_log_his">
           <button>
             <BsFillPersonFill size="3vh" />
           </button>
