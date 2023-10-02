@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { gwizdOnline } from "../variables";
 import {
   Typography,
   TextField,
@@ -27,7 +28,7 @@ export default function Statistic() {
 
   const getByReportType = async () => {
     const response = await fetch(
-      `https://api.gwizd.online/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
+      `${gwizdOnline}/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
     );
     const wyniki = await response.json();
     setDane(
