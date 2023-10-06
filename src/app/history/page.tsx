@@ -13,38 +13,33 @@ function History() {
     };
     fetchData();
   }, []);
-
   return (
     <div className={styles.historypagemain}>
-      <div className={styles.backgroundImage}>
-        <div className={styles.container}>
-          <h1>Historia zgłoszeń:</h1>
-          <div className={styles.containertable}>
-            <table className={styles.historyTable}>
-              <thead>
-                <tr>
-                  <th>Nazwa</th>
-                  <th>Opis</th>
-                  <th>Typ</th>
-                  <th>Zwierzę</th>
-                  <th>Ilość</th>
-                  <th>Data</th>
-                </tr>
-              </thead>
-              <tbody>
-                {reports.length === 0 ? (
-                  <tr>
-                    <td>Nie znaleziono</td>
-                  </tr>
-                ) : (
-                  reports.map((rep: AnimalReport) => {
-                    return <ReportRow report={rep} key={rep.id} />;
-                  })
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <h1>Historia zgłoszeń:</h1>
+      <div className={styles.containertable}>
+        <table className={styles.historyTable}>
+          <thead>
+            <tr>
+              <th>Nazwa</th>
+              <th>Opis</th>
+              <th>Typ</th>
+              <th>Zwierzę</th>
+              <th>Ilość</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reports.length === 0 ? (
+              <tr>
+                <td>Nie znaleziono</td>
+              </tr>
+            ) : (
+              reports.map((rep: AnimalReport) => {
+                return <ReportRow report={rep} key={rep.id} />;
+              })
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );
