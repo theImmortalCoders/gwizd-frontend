@@ -1,7 +1,7 @@
 "use client";
 import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { zmienna } from "../variables";
+import { apiDomain } from "../variables";
 
 export default function report() {
   const [animalList, setAnimalList] = useState([]);
@@ -28,7 +28,7 @@ export default function report() {
     navigator.geolocation.getCurrentPosition(success, error);
   };
   const getAnimals = async () => {
-    const response = await fetch(`${zmienna}/api/animal`);
+    const response = await fetch(`${apiDomain}/api/animal`);
     const animals = await response.json();
     setAnimalList(
       animals.map((animal: any) => {
@@ -55,7 +55,7 @@ export default function report() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
-    const response = await fetch(`${zmienna}/api/report`, {
+    const response = await fetch(`${apiDomain}/api/report`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(formData),

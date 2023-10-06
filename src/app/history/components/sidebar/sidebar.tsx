@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineClockCircle, AiOutlineLogout } from "react-icons/ai";
 import { BsTrophy } from "react-icons/bs";
 import styles from "./sidebar.module.css";
+import { apiDomain } from "@/app/variables";
 
 const Sidebar: React.FC = () => {
+  const href = apiDomain + "/api/oauth2/logout";
   return (
     <nav className={styles.sidebar}>
       <ul className={styles.sidebarlist}>
@@ -25,10 +27,7 @@ const Sidebar: React.FC = () => {
           </Link>
         </li>
         <li className={styles.sidebaritemlogout}>
-          <a
-            href="https://api.gwizd.online/api/oauth2/logout"
-            className={styles.logout}
-          >
+          <a href={href} className={styles.logout}>
             <AiOutlineLogout className={styles.icon} />
             <h4>Wylogowanie</h4>
           </a>

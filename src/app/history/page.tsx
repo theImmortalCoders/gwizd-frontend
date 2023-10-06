@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Home from "../achievement/page";
-import { zmienna } from "../variables";
+import { apiDomain } from "../variables";
 
 function History() {
   const [user, setUser] = useState([]);
   const getUser = async () => {
-    const response = await fetch(`${zmienna}/api/user/me`, {
+    const response = await fetch(`${apiDomain}/api/user/me`, {
       credentials: "include",
     });
     const user = await response.json();
@@ -15,7 +15,7 @@ function History() {
   };
   const [reports, setReports] = useState([]);
   const getReports = async () => {
-    const response = await fetch(`${zmienna}/api/report/?userId=${user}`);
+    const response = await fetch(`${apiDomain}/api/report/?userId=${user}`);
     const reports = await response.json();
     console.log(reports);
     setReports(

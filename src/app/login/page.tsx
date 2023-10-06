@@ -6,13 +6,6 @@ import { redirect } from "next/navigation";
 
 export default function Login() {
   const loginText: string = "Logowanie";
-
-  const myCookies = cookies();
-
-  if (myCookies.get("JSESSIONID")) {
-    redirect("/");
-  }
-
   return (
     <main className={styles.main}>
       <div className={styles.backgroundImage}>

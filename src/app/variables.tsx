@@ -1,10 +1,10 @@
-const stan = 2;
+const state = 2;
 
-const mapaWartosci = {
+const apiDomains = {
   1: "https://api.gwizd.online",
-  2: "http://localhost:3000",
+  2: "http://localhost:8080",
 };
 
-const zmienna = mapaWartosci[stan];
+const apiDomain = apiDomains[state];
 
-export { zmienna };
+export { apiDomain };

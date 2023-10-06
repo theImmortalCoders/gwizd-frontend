@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { zmienna } from "../variables";
+import { apiDomain } from "../variables";
 import {
   Typography,
   TextField,
@@ -28,7 +28,7 @@ export default function Statistic() {
 
   const getByReportType = async () => {
     const response = await fetch(
-      `${zmienna}/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
+      `${apiDomain}/api/report?reportType=${statData.spotType}&animalId=${statData.myId}`
     );
     const wyniki = await response.json();
     setDane(
@@ -47,7 +47,7 @@ export default function Statistic() {
   const [filterThreatLevel, setFilterThreatLevel] = useState("");
 
   const getAnimals = async () => {
-    const response = await fetch(`${zmienna}/api/animal`);
+    const response = await fetch(`${apiDomain}/api/animal`);
     const animals = await response.json();
     setAnimalList(
       animals.map((animal: any) => {

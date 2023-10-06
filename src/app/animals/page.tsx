@@ -1,3 +1,4 @@
+import ReportButton from "@/components/common/reportButton";
 import styles from "./page.module.css";
 import Image from "next/image";
 
@@ -68,9 +69,7 @@ export default function Animals() {
           </div>
         </div>
         <div className={styles.center}>
-          <button className={styles.submitbutton} type={"submit"}>
-            <a href="/report">Zgłoś obserwację</a>
-          </button>
+          <ReportButton />
         </div>
       </div>
     </div>
