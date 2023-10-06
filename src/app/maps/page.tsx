@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 import type { NextPage } from "next";
 import { useEffect, useMemo, useState } from "react";
-import { zmienna } from "../variables";
+import { apiDomain } from "../../variables";
 
 const Home: NextPage = () => {
   const [reps, setReps] = useState([]);
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const map2 = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
 
   const getAlertLocation = async () => {
-    const response = await fetch(`${zmienna}/api/report`);
+    const response = await fetch(`${apiDomain}/api/report`);
     const reports = await response.json();
     console.log(reports);
     setReps(

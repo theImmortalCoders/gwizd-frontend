@@ -21,3 +21,40 @@
 
 @media (prefers-color-scheme: dark) {
 }
+
+.reportpagemain {
+  width: 100vw;
+}
+/*https://pixabay.com/pl/photos/przyjaciele-pies-zwierz%C4%99-domowe-3042751/*/
+.backgroundImage {
+  background-image: url("../../public/homepage.jpg");
+  background-size: cover;
+  background-position: center top 55%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: 100vw;
+  min-height: 93vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+}
+.container button {
+  padding: 2vh 5vh;
+  background-color: var(--verydarkgrey);
+  color: var(--whitetowrite);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: center;
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.container button:hover {
+  background-color: var(--whitetowrite);
+  color: var(--verydarkgrey);
+}
