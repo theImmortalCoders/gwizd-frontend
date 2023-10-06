@@ -13,6 +13,7 @@ function History() {
     };
     fetchData();
   }, []);
+
   return (
     <div className={styles.historypagemain}>
       <div className={styles.backgroundImage}>
@@ -31,9 +32,15 @@ function History() {
                 </tr>
               </thead>
               <tbody>
-                {reports.map((rep: AnimalReport) => {
-                  return <ReportRow report={rep} key={rep.id} />;
-                })}
+                {reports.length === 0 ? (
+                  <tr>
+                    <td>Nie znaleziono</td>
+                  </tr>
+                ) : (
+                  reports.map((rep: AnimalReport) => {
+                    return <ReportRow report={rep} key={rep.id} />;
+                  })
+                )}
               </tbody>
             </table>
           </div>
