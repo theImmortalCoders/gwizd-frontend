@@ -24,7 +24,7 @@ const getReportsByUser = async (
 };
 
 const getActiveReports = async (setReports: Function) => {
-  const response = await fetch(`${apiDomain}/api/report`);
+  const response = await fetch(`${apiDomain}/api/report?isActive=true`);
   const reports = await response.json();
   setReports(
     reports.map((report: AnimalReport) => {
@@ -36,4 +36,20 @@ const getActiveReports = async (setReports: Function) => {
   );
 };
 
-export { getReportsByUser, getActiveReports };
+const sendReport = async (report: ReportAdd) => {
+  const response = await fetch(`${apiDomain}/api/report`, {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(report),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.status === 400) {
+    console.log(response.json());
+  } else {
+    window.location.href = "/";
+  }
+};
+
+export { getReportsByUser, getActiveReports, sendReport };

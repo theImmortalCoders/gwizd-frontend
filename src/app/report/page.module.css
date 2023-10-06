@@ -4,7 +4,7 @@
 }
 /*https://pixabay.com/pl/photos/lis-red-fox-przebieg%C5%82y-7017260/*/
 .backgroundImage {
-  background-image: url("./animals.jpg");
+  background-image: url("../../../public/animals.jpg");
   background-size: cover;
   background-position: center top 70%;
   padding-top: 5vh;

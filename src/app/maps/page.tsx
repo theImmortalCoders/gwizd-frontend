@@ -11,15 +11,12 @@ const Neighbourhood = () => {
     googleMapsApiKey: "AIzaSyATXEtRMP-Yn6KCPDpHTm5CTiYZI5qWqGc",
     libraries: libraries as any,
   });
-
   useEffect(() => {
     getActiveReports(setReports);
   }, []);
-
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
-
   return (
     <div>
       <GwizdMap reports={reports} />

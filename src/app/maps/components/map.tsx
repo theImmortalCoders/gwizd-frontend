@@ -33,6 +33,7 @@ const GwizdMap = (props: { reports: Array<AnimalReport> }) => {
               strokeColor: rep.reportType === "DANGER" ? "red" : "blue",
               strokeOpacity: 0.1,
             }}
+            key={rep.id}
           />
         );
       })}
