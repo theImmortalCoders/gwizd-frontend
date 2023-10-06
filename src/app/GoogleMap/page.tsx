@@ -8,6 +8,7 @@ import {
 import type { NextPage } from "next";
 import { useEffect, useMemo, useState } from "react";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { zmienna } from "../variables";
 
 const Home: NextPage = () => {
   const [reps, setReps] = useState<any[]>([]);
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
   const map2 = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
 
   const getAlertLocation = async () => {
-    const response = await fetch("https://api.gwizd.online/api/report");
+    const response = await fetch(`${zmienna}/api/report`);
     const reports = await response.json();
     console.log(reports);
     setReps(
