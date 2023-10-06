@@ -1,10 +1,10 @@
-.historypagemain {
+.dashboardpagemain {
   width: 100vw;
   min-height: 93vh;
 }
 /*https://pixabay.com/pl/photos/sarna-jele%C5%84-poro%C5%BCe-le%C5%9Bne-zwierz%C4%99-2634729/*/
 .backgroundImage {
-  background-image: url("../../../public/history.jpg");
+  background-image: url("../../../public/dashboard.jpg");
   background-size: cover;
   background-position: center top 30%;
   padding-top: 5vh;
@@ -35,7 +35,7 @@
   min-height: 50vh;
   font-size: clamp(0.8rem, 1.2vw, 2.5rem);
 }
-.historyTable th {
+.dashboardTable th {
   text-align: left;
 }
 @media (max-width: 700px) {

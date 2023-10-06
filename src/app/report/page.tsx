@@ -1,45 +1,34 @@
 "use client";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { apiDomain } from "../../variables";
+import getLocation from "@/data/locationData";
+import getAnimals from "@/data/animalData";
+import { sendReport } from "@/data/reportData";
+import { reportTypes } from "@/data/reportTypes";
+import SelectType from "./components/selectType";
+import SelectAnimal from "./components/selectAnimal";
+import ReportForm from "./components/form";
 
 export default function report() {
-  const [animalList, setAnimalList] = useState([]);
-  const [formData, setFormData] = useState({
+  const [animalList, setAnimalList] = useState<Animal[]>([]);
+  const [formData, setFormData] = useState<ReportAdd>({
     reportType: "SPOT",
     location: {
-      longitude: 0,
-      latitude: 0,
+      id: 0,
+      latitude: "",
+      longitude: "",
     },
     animalId: 1,
     quantity: 1,
     title: "",
     description: "",
   });
-  const getLocation = () => {
-    const success = (position: any) => {
-      formData.location.latitude = position.coords.latitude;
-      formData.location.longitude = position.coords.longitude;
-    };
-    const error = () => {
-      console.log("Error");
-    };
 
-    navigator.geolocation.getCurrentPosition(success, error);
-  };
-  const getAnimals = async () => {
-    const response = await fetch(`${apiDomain}/api/animal`);
-    const animals = await response.json();
-    setAnimalList(
-      animals.map((animal: any) => {
-        return [animal.name, animal.id];
-      })
-    );
-  };
   useEffect(() => {
-    getLocation();
-    getAnimals();
+    formData.location = getLocation();
+    getAnimals(setAnimalList);
   }, []);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -54,99 +43,30 @@ export default function report() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(JSON.stringify(formData));
-    const response = await fetch(`${apiDomain}/api/report`, {
-      method: "POST",
-      credentials: "include",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response;
-    window.location.href = "/";
+    sendReport(formData);
   };
 
   return (
     <main className={styles.main}>
-      <div className={styles.backgroundImage}>
-        <div className={styles.container}>
-          <div className={styles.header}>Formularz zgłoszeniowy</div>
-          <form onSubmit={handleSubmit} className={styles.text}>
-            <div className={styles.labelll}>
-              <label>Typ spotkania: </label>
-              <select
-                className={styles.selectform}
-                name="reportType"
-                value={formData.reportType}
-                onChange={(e) => handleChange(e)}
-              >
-                <option className={styles.selectform} value={"SPOT"}>
-                  Dzikie Zwierze{" "}
-                </option>
-                <option className={styles.selectform} value={"HOME"}>
-                  Zwierzę Domowe
-                </option>
-                <option className={styles.selectform} value={"DANGER"}>
-                  Zwierzę w niebezpiecznym miejscu
-                </option>
-              </select>
-            </div>
-            <div className={styles.labelll}>
-              <label>Zwierze: </label>
-              <select
-                className={styles.selectform}
-                name="animalId"
-                value={formData.animalId}
-                onChange={(e) => handleChange(e)}
-              >
-                {animalList.map((animal) => {
-                  return (
-                    <option key={animal[1]} value={animal[1]}>
-                      {animal[0]}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <div className={styles.labelll}>
-              <label>Ilość: </label>
-              <input
-                className={styles.selectform}
-                min={1}
-                type="number"
-                name="quantity"
-                value={formData.quantity}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.labelll}>
-              <label>Tytuł: </label>
-              <input
-                className={styles.selectform}
-                type={"textbox"}
-                name="title"
-                value={formData.title}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.labelll}>
-              <label>Opis: </label>
-              <textarea
-                className={styles.selectformtextarea}
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-            <div>
-              <button className={styles.submitbutton} type={"submit"}>
-                Wyślij
-              </button>
-            </div>
-          </form>
+      <div className={styles.header}>Formularz zgłoszeniowy</div>
+      <form onSubmit={handleSubmit} className={styles.text}>
+        <SelectType
+          formData={formData}
+          handleChange={handleChange}
+          reportTypes={reportTypes}
+        />
+        <SelectAnimal
+          formData={formData}
+          handleChange={handleChange}
+          animalList={animalList}
+        />
+        <ReportForm formData={formData} handleChange={handleChange} />
+        <div>
+          <button className={styles.submitbutton} type={"submit"}>
+            Wyślij
+          </button>
         </div>
-      </div>
+      </form>
     </main>
   );
 }
