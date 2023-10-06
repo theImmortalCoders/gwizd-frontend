@@ -7,7 +7,7 @@ const UserButton = () => {
   if (!myCookies.get("JSESSIONID")) {
     redirect = "/login";
   } else {
-    redirect = "/history";
+    redirect = "/dashboard";
   }
   return (
     <a className={styles.menuDesktopAndPhone} href={redirect}>

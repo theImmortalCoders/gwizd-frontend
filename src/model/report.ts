@@ -4,6 +4,7 @@ type AnimalReport = {
   description: string;
   reportType: string;
   animal: Animal;
+  location: GwizdLocation;
   quantity: number;
   createdDate: string;
 };

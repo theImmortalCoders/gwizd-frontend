@@ -6,5 +6,6 @@ const apiDomains = {
 };
 
 const apiDomain = apiDomains[state];
+const domain = "http://localhost:3000";
 
-export { apiDomain };
+export { apiDomain, domain };

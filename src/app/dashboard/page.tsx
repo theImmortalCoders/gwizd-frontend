@@ -2,22 +2,22 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import getUser from "@/data/userData";
-import getReports from "@/data/reportData";
+import { getReportsByUser } from "@/data/reportData";
 import ReportRow from "./components/reportRow";
 
-function History() {
+function Dashboard() {
   const [reports, setReports] = useState<Array<AnimalReport>>([]);
   useEffect(() => {
     const fetchData = async () => {
-      getReports(await getUser(), setReports);
+      getReportsByUser(await getUser(), setReports);
     };
     fetchData();
   }, []);
   return (
-    <div className={styles.historypagemain}>
+    <div className={styles.dashboardpagemain}>
       <h1>Historia zgłoszeń:</h1>
       <div className={styles.containertable}>
-        <table className={styles.historyTable}>
+        <table className={styles.dashboardTable}>
           <thead>
             <tr>
               <th>Nazwa</th>
@@ -45,4 +45,4 @@ function History() {
   );
 }
 
-export default History;
+export default Dashboard;

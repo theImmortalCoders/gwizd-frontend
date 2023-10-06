@@ -1,51 +1,20 @@
 "use client";
-import {
-  CircleF,
-  GoogleMap,
-  MarkerF,
-  useLoadScript,
-} from "@react-google-maps/api";
-import type { NextPage } from "next";
+import { useLoadScript } from "@react-google-maps/api";
 import { useEffect, useMemo, useState } from "react";
-import { apiDomain } from "../../variables";
+import { getActiveReports } from "@/data/reportData";
+import GwizdMap from "./components/map";
 
-const Home: NextPage = () => {
-  const [reps, setReps] = useState([]);
+const Neighbourhood = () => {
+  const [reports, setReports] = useState([]);
   const libraries = useMemo(() => ["places"], []);
-  const mapCenter = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
-  const map1 = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
-  const map2 = useMemo(() => ({ lat: 50.0678693, lng: 19.9916377 }), []);
-
-  const getAlertLocation = async () => {
-    const response = await fetch(`${apiDomain}/api/report`);
-    const reports = await response.json();
-    console.log(reports);
-    setReps(
-      reports.map((rep: any) => {
-        return {
-          repType: rep.reportType,
-          location: { lat: rep.location.latitude, lng: rep.location.longitude },
-        };
-      })
-    );
-  };
-
-  useEffect(() => {
-    getAlertLocation();
-  }, []);
-
-  const mapOptions = useMemo<google.maps.MapOptions>(
-    () => ({
-      disableDefaultUI: true,
-      clickableIcons: true,
-      scrollwheel: true,
-    }),
-    []
-  );
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyATXEtRMP-Yn6KCPDpHTm5CTiYZI5qWqGc",
     libraries: libraries as any,
   });
+
+  useEffect(() => {
+    getActiveReports(setReports);
+  }, []);
 
   if (!isLoaded) {
     return <p>Loading...</p>;
@@ -53,30 +22,9 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <GoogleMap
-        options={mapOptions}
-        zoom={12}
-        center={mapCenter}
-        mapTypeId={google.maps.MapTypeId.ROADMAP}
-        mapContainerStyle={{ width: "100vw", height: "90vh" }}
-      >
-        {reps.map((rep: any) => {
-          console.log(rep);
-          return (
-            <CircleF
-              center={rep.location}
-              radius={1000}
-              options={{
-                fillColor: rep.repType === "DANGER" ? "red" : "blue",
-                strokeColor: rep.repType === "DANGER" ? "red" : "blue",
-                strokeOpacity: 0.1,
-              }}
-            />
-          );
-        })}
-      </GoogleMap>
+      <GwizdMap reports={reports} />
     </div>
   );
 };
 
-export default Home;
+export default Neighbourhood;
