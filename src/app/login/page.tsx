@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
 import LoginBox from "./components/box/box";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 export default function Login() {
   const loginText: string = "Logowanie";

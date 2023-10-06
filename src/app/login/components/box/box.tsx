@@ -3,7 +3,7 @@ import React from "react";
 import LoginButton from "../button/button";
 import styles from "./box.module.css";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { apiDomain } from "../../../variables";
+import { apiDomain } from "../../../../variables";
 
 interface LoginBoxProps {
   loginText: string;

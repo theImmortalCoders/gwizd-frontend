@@ -4,7 +4,7 @@
 }
 /*https://pixabay.com/pl/photos/sarna-jele%C5%84-poro%C5%BCe-le%C5%9Bne-zwierz%C4%99-2634729/*/
 .backgroundImage {
-  background-image: url("./history.jpg");
+  background-image: url("../../../public/history.jpg");
   background-size: cover;
   background-position: center top 30%;
   padding-top: 5vh;

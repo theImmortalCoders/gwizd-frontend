@@ -1,7 +1,7 @@
 "use client";
 import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { apiDomain } from "../variables";
+import { apiDomain } from "../../variables";
 
 export default function report() {
   const [animalList, setAnimalList] = useState([]);

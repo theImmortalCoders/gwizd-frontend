@@ -3,7 +3,7 @@
   min-height: 93vh;
 }
 .backgroundImage {
-  background-image: url("./components/1picture.jpg");
+  background-image: url("../../../public/1picture.jpg");
   background-size: cover;
   background-position: center top 55%;
   padding-top: 5vh;

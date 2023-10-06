@@ -1,42 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import Home from "../achievement/page";
-import { apiDomain } from "../variables";
+import getUser from "@/data/userData";
+import getReports from "@/data/reportData";
+import ReportRow from "./components/reportRow";
 
 function History() {
-  const [user, setUser] = useState([]);
-  const getUser = async () => {
-    const response = await fetch(`${apiDomain}/api/user/me`, {
-      credentials: "include",
-    });
-    const user = await response.json();
-    setUser(user.id);
-  };
-  const [reports, setReports] = useState([]);
-  const getReports = async () => {
-    const response = await fetch(`${apiDomain}/api/report/?userId=${user}`);
-    const reports = await response.json();
-    console.log(reports);
-    setReports(
-      reports.map((rep: any) => {
-        return {
-          id: rep.id,
-          title: rep.title,
-          description: rep.description,
-          type: rep.reportType,
-          animal: rep.animal,
-          quantity: rep.quantity,
-          date: rep.createdDate,
-        };
-      })
-    );
-  };
+  const [reports, setReports] = useState<Array<AnimalReport>>([]);
   useEffect(() => {
-    getUser();
-    getReports();
+    const fetchData = async () => {
+      getReports(await getUser(), setReports);
+    };
+    fetchData();
   }, []);
-
   return (
     <div className={styles.historypagemain}>
       <div className={styles.backgroundImage}>
@@ -55,25 +31,14 @@ function History() {
                 </tr>
               </thead>
               <tbody>
-                {reports.map((rep: any) => {
-                  console.log(rep);
-                  return (
-                    <tr key={rep.id}>
-                      <td>{rep.title}</td>
-                      <td>{rep.description}</td>
-                      <td>{rep.type}</td>
-                      <td>{rep.animal.name}</td>
-                      <td>{rep.quantity}</td>
-                      <td>{rep.date}</td>
-                    </tr>
-                  );
+                {reports.map((rep: AnimalReport) => {
+                  return <ReportRow report={rep} key={rep.id} />;
                 })}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <Home />
     </div>
   );
 }

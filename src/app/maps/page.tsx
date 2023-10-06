@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 import type { NextPage } from "next";
 import { useEffect, useMemo, useState } from "react";
-import { apiDomain } from "../variables";
+import { apiDomain } from "../../variables";
 
 const Home: NextPage = () => {
   const [reps, setReps] = useState([]);

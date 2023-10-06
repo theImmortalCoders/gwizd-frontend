@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { apiDomain } from "../variables";
+import { apiDomain } from "../../variables";
 import {
   Typography,
   TextField,
