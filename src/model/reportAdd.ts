@@ -5,4 +5,5 @@ type ReportAdd = {
   quantity: number;
   title: string;
   description: string;
+  photo: string;
 };
