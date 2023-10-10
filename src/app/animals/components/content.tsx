@@ -1,4 +1,4 @@
-import ReportButton from "@/components/reportButton";
+import ReportButton from "@/components/home/reportButton";
 import styles from "../page.module.css";
 
 const Content = () => {

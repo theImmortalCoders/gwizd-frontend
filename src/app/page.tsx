@@ -1,16 +1,6 @@
-import ReportButton from "@/components/reportButton";
-import styles from "./page.module.css";
+import BackgroundImg from "@/components/common/BackgroundImg";
+import ReportButton from "@/components/home/reportButton";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.reportpagemain}>
-        <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <ReportButton />
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  return <main className="bg-black">Co za chuj</main>;
 }
